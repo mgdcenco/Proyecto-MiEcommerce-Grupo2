@@ -1,5 +1,3 @@
-@import url("partials/productCard.css");
-
 :root{
     --blanco:  rgba(255, 255, 255, 1);
     --gris-claro: rgba(153, 153, 153, 1);
@@ -15,8 +13,4 @@
     --f-weight: normal;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+

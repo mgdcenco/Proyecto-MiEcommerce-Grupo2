@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs", {title:"Index"})%>
+  <body>
+    <%-include('../partials/navbar') %> 
+    <main class="main--partials">
+      <div class="main--partials-container">
+        <%-include("../partials/category.ejs")%> 
+        <%-include("../partials/productCard.ejs") %> 
+        <%-include("../partials/category.ejs")%> 
+      </div>
+    </main>
+    <%-include("../partials/footer.ejs")%>
+  </body>
+</html>
