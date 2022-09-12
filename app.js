@@ -28,8 +28,9 @@ app.get("/category", (req, res) => {
 
 app.get("/product/:id", (req, res) => {
   const url = req.url;
-  const productId = req.params.id;
-  const product = products.find((product) => product.id === productId);
+  const productId = parseInt(req.params.id);
+  let product = products.find((prod) => prod.id === productId);
+  console.log(product);
   product !== undefined
     ? res.render("product", { product, url })
     : res.send("No se encuentra producto");
