@@ -17,7 +17,9 @@
           ><%= products.reduce((total, product)=>total+product.price, 0) %>
         </span>
       </div>
-      <div class="button-container"><button>Ir a pagar</button></div>
+      <div class="button-container">
+        <button class="section-product-detail__button">Ir a pagar</button>
+      </div>
     </main>
     <%- include("../partials/footer.ejs")%>
   </body>
