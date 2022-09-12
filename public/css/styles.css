@@ -1,3 +1,6 @@
+@import "./partials/category.css";
+
+
 :root{
     --blanco:  rgba(255, 255, 255, 1);
     --gris-claro: rgba(153, 153, 153, 1);
@@ -11,4 +14,11 @@
     --f-family: "Open Sans";
     --f-style: normal ;
     --f-weight: normal;
+}
+
+*{
+    font-family:var(--f-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
