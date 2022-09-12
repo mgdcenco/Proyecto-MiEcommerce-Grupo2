@@ -1,0 +1,22 @@
+<% if(url==="/login"||url==="/register") {%>
+<nav>
+  <a href="/"><img src="/img/MiEcommerce.svg" alt="logo" /></a>
+</nav>
+<% } else { %>
+<nav>
+  <a href="/"
+    ><img class="logo-mobile" src="/img/MiE.svg" alt="logo" />
+    <img class="logo-desktop" src="/img/MiEcommerce.svg" alt="logo"
+  /></a>
+  <form action="/" class="search-form">
+    <input class="search-input" type="text" placeholder="Buscar productos..." />
+    <button type="submit">
+      <img src="/img/magnify.svg" alt="" />
+    </button>
+  </form>
+  <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
+  <a href="/profile" class="profile-link"
+    ><img src="/img/ProfileBtn.svg" alt="Profile Button"
+  /></a>
+</nav>
+<% } %>
