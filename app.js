@@ -7,16 +7,17 @@ app.use(express.static("public"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+
 app.get("/", (req, res) => {
   res.render("index");
 });
 
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("./pages/login");
 });
 
 app.get("/register", (req, res) => {
-  res.render("register");
+  res.render("./pages/register");
 });
 
 app.get("/product/:id", (req, res) => {
