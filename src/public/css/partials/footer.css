@@ -1,0 +1,46 @@
+@media (min-width: 769px) {
+}
+
+.foot {
+  color: var(--gris-claro);
+}
+.foot__copy {
+  text-align: center;
+  margin-bottom: 7px;
+}
+.foot__logos {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 7px;
+}
+
+.foot__stores {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.foot__stores a {
+  text-decoration: none;
+  color: var(--gris-claro);
+}
+
+.foot__apple {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.foot__google {
+  display: flex;
+  align-items: center;
+}
+
+.foot__logos svg {
+  fill: var(--gris-claro);
+}
+
+.foot__stores svg {
+  fill: var(--gris-claro);
+}

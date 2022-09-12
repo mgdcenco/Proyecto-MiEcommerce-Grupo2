@@ -5,6 +5,7 @@ const products = require("./data/products.json");
 
 app.use(express.static("./src/public"));
 app.set("views", "./src/views/pages");
+
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
@@ -20,6 +21,9 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   const url = req.url;
   res.render("register", { url });
+});
+app.get("/category", (req, res) => {
+  res.render("category");
 });
 
 app.get("/product/:id", (req, res) => {
