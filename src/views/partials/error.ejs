@@ -1,3 +1,14 @@
-<section class="section-error">
-    <h1>Ups! No encontramos ese producto!</h1>
-</section>
+<%if(prod){ %>
+    <section class="section-error">
+        <h1>Ups! Ha ocurrido un error al buscar ese producto!</h1>
+        <h2>Por favor, regrese a la pagina de inicio</h2>
+        <a href="/">Presione click aquí</a>
+    </section>
+
+<%}else{%>
+    <section class="section-error">
+        <h1>Ups! No logramos localizar esa pagina!</h1>
+        <h2>Por favor, regrese a la pagina de inicio</h2>
+        <a href="/">Presione click aquí</a>
+    </section>
+<%}%>

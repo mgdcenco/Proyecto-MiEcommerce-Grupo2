@@ -9,4 +9,24 @@
 
 .section-error > h1{
     font-size: var(--header1);
+    color: var(--gris-oscuro);
+}
+.section-error > h2{
+    color: var(--gris-oscuro);
+    font-size: var(--header3);
+}
+
+.section-error > a{
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris-oscuro);
+
+    margin: 30px 30px;
+    color: var(--blanco);
+    border-radius: 30px;
+    text-decoration: none;
 }

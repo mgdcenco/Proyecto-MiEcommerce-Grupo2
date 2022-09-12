@@ -32,10 +32,9 @@ app.get("/product/:id", (req, res) => {
   const url = req.url;
   const productId = parseInt(req.params.id);
   let product = products.find((prod) => prod.id === productId);
-  console.log(product);
   product !== undefined
-    ? res.render("product", { product, url, error:false })
-    : res.render("product", { url, error:true});
+  ? res.render("product", { product, url, error:false })
+  : res.render("product", { url, error:true});
 });
 
 app.get("/cart", (req, res) => {
@@ -44,4 +43,8 @@ app.get("/cart", (req, res) => {
   res.render("cart", { products: productsInCart, url });
 });
 
+app.get("*", (req, res) => {
+  const url = req.url;
+  res.render("error404", { url });
+});
 app.listen(port, console.log(`listen on port ${3000}`));
