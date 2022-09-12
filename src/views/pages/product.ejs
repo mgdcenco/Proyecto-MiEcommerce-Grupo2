@@ -5,29 +5,32 @@
     <%- include('../partials/navbar') %>
 
     <main>
-        <section class="section-product-detail">
-            <div class="section-product-detail__images">
-                <div class="section-product-detail__images-banner"><img src="<%=product.images[0]%>" alt=""></div>
-                <div class="section-product-detail__images-collection">
-                    <%if(product.images.length >2){ %>
-                        <img src="<%=product.images[1]%>" alt="<%=product.title%>"><img src="<%=product.images[0]%>" alt="<%=product.title%>"><img src="<%=product.images[2]%>" alt="<%=product.title%>">
-                    <%}else if(product.images.length === 2){ %>
-                        <img src="<%=product.images[0]%>" alt="<%=product.title%>">
-                        <img src="<%=product.images[1]%>" alt="<%=product.title%>">
-                    <%} else{%>
-                        <img src="<%=product.images[0]%>" alt="<%=product.title%>">
-                    <%}%>
+        <% if (!error){ %>
+            <section class="section-product-detail">
+                <div class="section-product-detail__images">
+                    <div class="section-product-detail__images-banner"><img src="<%=product.images[0]%>" alt=""></div>
+                    <div class="section-product-detail__images-collection">
+                        <%if(product.images.length >2){ %>
+                            <img src="<%=product.images[1]%>" alt="<%=product.title%>"><img src="<%=product.images[0]%>" alt="<%=product.title%>"><img src="<%=product.images[2]%>" alt="<%=product.title%>">
+                        <%}else if(product.images.length === 2){ %>
+                            <img src="<%=product.images[0]%>" alt="<%=product.title%>">
+                            <img src="<%=product.images[1]%>" alt="<%=product.title%>">
+                        <%} else{%>
+                            <img src="<%=product.images[0]%>" alt="<%=product.title%>">
+                        <%}%>
+                    </div>
                 </div>
-            </div>
-            <div class="section-product-detail__description">
-                <h2><%=product.title%></h2>
-                <h3 class="section-product-detail__description-price"><%=product.price%> <span>PUNTOS</span></h3>
-                <p><%=product.description%></p>
-                <button class="section-product-detail__button">Agregar al carrito</button>
-            </div>
-    
-        </section>
-    
+                <div class="section-product-detail__description">
+                    <h2><%=product.title%></h2>
+                    <h3 class="section-product-detail__description-price"><%=product.price%> <span>PUNTOS</span></h3>
+                    <p><%=product.description%></p>
+                    <button class="section-product-detail__button">Agregar al carrito</button>
+                </div>
+        
+            </section>
+        <%} else {%>
+            <%- include("../partials/error.ejs") %>
+        <% }%>
         
         
         <%-include("../partials/category.ejs")%>

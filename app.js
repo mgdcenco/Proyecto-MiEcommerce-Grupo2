@@ -33,7 +33,7 @@ app.get("/product/:id", (req, res) => {
   console.log(product);
   product !== undefined
     ? res.render("product", { product, url })
-    : res.send("No se encuentra producto");
+    : res.render("product", {error:true, url});
 });
 
 app.get("/cart", (req, res) => {

@@ -2,6 +2,7 @@
 @import url("./partials/footer.css");
 @import "./partials/category.css";
 @import "./partials/product.css";
+@import "./partials/error.css";
 @import url("partials/productCard.css");
 @import url("pages/home.css");
 
