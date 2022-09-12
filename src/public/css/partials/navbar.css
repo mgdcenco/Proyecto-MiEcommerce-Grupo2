@@ -1,5 +1,5 @@
 nav {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 1);
   backdrop-filter: blur(4px);
   height: 64px;
   padding: 16px;
@@ -10,7 +10,7 @@ nav {
 }
 
 .search-input {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 16px;
   width: 100%;
@@ -19,6 +19,7 @@ nav {
 }
 
 .search-form {
+  height: 32px;
   width: 90%;
   position: relative;
   align-self: stretch;
@@ -29,8 +30,8 @@ button[type="submit"] {
   background: none;
   border: none;
   cursor: pointer;
-  right: 3px;
-  top: 3px;
+  right: 16px;
+  top: 4px;
 }
 
 .profile-link img {
@@ -54,5 +55,9 @@ button[type="submit"] {
 
   .logo-desktop {
     display: block;
+  }
+
+  .search-form {
+    margin: 0 40px;
   }
 }
