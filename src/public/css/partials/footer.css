@@ -1,18 +1,31 @@
+footer {
+  border-top: 1px solid var(--gris-claro);
+}
+
 .foot {
   color: var(--gris-claro);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 1rem;
 }
 .foot__copy {
   text-align: center;
   margin-bottom: 7px;
+  font-size: 12px;
 }
+
+.padre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .foot__logos {
   display: flex;
   justify-content: space-around;
   margin-bottom: 7px;
+  width: 55%;
 }
 
 .foot__stores {
@@ -20,6 +33,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+  font-size: 12px;
 }
 
 .foot__stores a {
@@ -44,6 +58,7 @@
 
 .foot__stores svg {
   fill: var(--gris-claro);
+  margin-right: 0.3rem;
 }
 
 @media (min-width: 769px) {
@@ -51,7 +66,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 92.7%;
+    /* width: 92.7%; */
   }
 
   .padre {
