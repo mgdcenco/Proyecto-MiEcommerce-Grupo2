@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs", {title:"Index"})%>
+  <body>
+    <%- include('../partials/navbar') %>
+    <main class="cart-container">
+      <a class="breadcrumb" href="/">Volver</a>
+      <h1>Productos en tu carrito</h1>
+      <div class="cart-list">
+        <% products.map((product)=>{%> <%-
+        include("../partials/productInCart.ejs", {product})%> <% }) %>
+      </div>
+
+      <div class="cart-total-container">
+        <p>Total de Puntos</p>
+        <span class="total-price"
+          ><%= products.reduce((total, product)=>total+product.price, 0) %>
+        </span>
+      </div>
+      <div class="button-container"><button>Ir a pagar</button></div>
+    </main>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

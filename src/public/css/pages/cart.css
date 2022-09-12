@@ -1,0 +1,63 @@
+.cart-container {
+  padding: 0 16px;
+  margin-top: 16px;
+  margin-bottom: 63px;
+}
+
+.cart-container a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.cart-container h1 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.cart-container a::before {
+  content: url("/img/arrow-left.svg");
+  color: black;
+  padding-top: 5px;
+}
+
+.cart-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-total-container {
+  padding-top: 27px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 26px;
+}
+
+.total-price {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding-right: 22px;
+}
+
+.button-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}

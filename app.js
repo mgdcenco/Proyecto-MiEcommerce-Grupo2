@@ -37,8 +37,8 @@ app.get("/product/:id", (req, res) => {
 
 app.get("/cart", (req, res) => {
   const url = req.url;
-  const productsInCart = products.splice(0, 2);
-  res.render("cart", { productsInCart, url });
+  const productsInCart = products.splice(1, 3);
+  res.render("cart", { products: productsInCart, url });
 });
 
 app.listen(port, console.log(`listen on port ${3000}`));
