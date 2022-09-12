@@ -3,6 +3,9 @@
 
 .foot {
   color: var(--gris-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .foot__copy {
   text-align: center;
