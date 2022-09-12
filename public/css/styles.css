@@ -1,5 +1,5 @@
 @import "./partials/category.css";
-
+@import url("partials/productCard.css");
 
 :root{
     --blanco:  rgba(255, 255, 255, 1);
