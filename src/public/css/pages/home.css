@@ -1,0 +1,8 @@
+.main--partials{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.main--partials-container{
+    width: 90%;
+}

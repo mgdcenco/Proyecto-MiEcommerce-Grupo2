@@ -3,21 +3,21 @@
 } */
 
 .product-list{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .product-list--h{
-    width: 92.7%;
+    width: 100%;
     margin: 1rem 0;
 }
 
 
 .product-list--card{
     /* width: 382px; */
-    width: 92.7%;
+    /* width: 92.7%; */
     height: 144px;
     background-color: var(--blanco);
     display: flex;
