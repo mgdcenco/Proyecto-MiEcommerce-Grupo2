@@ -8,6 +8,7 @@ app.set("views", "./src/views/pages");
 
 app.set("view engine", "ejs");
 
+
 app.get("/", (req, res) => {
   const url = req.url;
   res.render("index", { url });
@@ -22,8 +23,9 @@ app.get("/register", (req, res) => {
   const url = req.url;
   res.render("register", { url });
 });
-app.get("/category", (req, res) => {
-  res.render("category");
+
+app.get("/register", (req, res) => {
+  res.render("./pages/register");
 });
 
 app.get("/product/:id", (req, res) => {

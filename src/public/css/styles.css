@@ -4,8 +4,8 @@
 @import "./partials/product.css";
 @import "./partials/error.css";
 @import url("partials/productCard.css");
+@import url("./partials/productDescuento.css");
 @import url("pages/home.css");
-
 
 :root {
   --blanco: rgba(255, 255, 255, 1);
@@ -23,19 +23,13 @@
   --f-weight: normal;
 }
 
-*{
-  font-family:var(--f-family);
+* {
+  font-family: var(--f-family);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: var(--gris-body);
 }
-
-main{
-  width: 92.7%;
-  margin: 0 auto;
-}
-
