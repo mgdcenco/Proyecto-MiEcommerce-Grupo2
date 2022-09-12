@@ -18,6 +18,9 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 });
+app.get("/category", (req, res) => {
+  res.render("category");
+});
 
 app.get("/product/:id", (req, res) => {
   const productId = req.params.id;
