@@ -1,0 +1,29 @@
+.prod--containerWrapper {
+  background-image: url("/img/disneybg.jpg");
+  background-size: cover;
+  border-radius: 16px;
+  width: 92.7%;
+  min-height: 191px;
+  margin: 35px auto 33px;
+  padding: 16px 24px;
+  position: relative;
+}
+
+.prod--img--container {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+}
+
+.prod--img img {
+  width: 112px;
+  height: 112px;
+  border-radius: 8px;
+}
+
+.prod--text p {
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+}
