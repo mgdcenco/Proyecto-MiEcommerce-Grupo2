@@ -1,0 +1,124 @@
+
+
+.section-product-detail{
+    border-radius: 8px;
+    background: var(--blanco);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.section-product-detail h2{
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+}
+
+.section-product-detail__images{
+    margin-top: 66px;
+}
+.section-product-detail__images-banner{
+    width: 100%;
+}
+.section-product-detail__images-banner > img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.section-product-detail__images-collection{
+    height: 48px;
+}
+
+.section-product-detail__images-collection > img{
+    height: 100%;
+    width: 48px;
+    border-radius: 8px;
+}
+.section-product-detail__images-collection > img:not(:last-child){
+    margin-right: 8px;
+}
+
+.section-product-detail__description-price{
+    font-size: var(--header1);
+    font-weight: 700;
+}
+.section-product-detail__description-price span{ 
+    font-size: 16px;
+    font-weight: var(--f-weight);
+}
+
+.section-product-detail__description > p{
+    font-size: 12px;
+    margin-top: 24px;
+    line-height: 16px;
+    color: var(--negro);
+}
+
+.section-product-detail__button{
+    height: 32px;
+    width: 100%;
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    font-size: 12px;
+    border-radius: 16px;
+    margin-top: 16px;
+    border: none;
+}
+
+
+
+
+@media (min-width:769px) {
+    .section-product-detail{
+        flex-direction: row;
+        padding: 8px 16px;
+    }
+
+    .section-product-detail__images{
+        margin-top: 0;
+        order: -10;
+        display: flex;
+    }
+    .section-product-detail__images-banner{
+        order: 1;
+        width: 100%;
+        min-height: 320px;
+        max-height: 520px;
+    }
+    .section-product-detail__images-banner > img{
+        height: 520px;
+        width: 100%;
+    }
+
+    .section-product-detail__images-collection{
+        width: 48px;
+        height: auto;
+        margin-right: 8px;
+    }
+    .section-product-detail__images-collection > img{
+        height: 48px;
+    }
+
+    .section-product-detail__description{
+        display: flex;
+        width: 32%;
+        flex-direction: column;
+    }
+    .section-product-detail h2{
+        position: relative;
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    .section-product-detail__description > button {
+        order: 1;
+    }
+    .section-product-detail__description > p {
+        order: 2;
+        margin-top: 16px;
+    }
+}

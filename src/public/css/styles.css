@@ -1,6 +1,7 @@
 @import url("./partials/navbar.css");
 @import url("./partials/footer.css");
 @import "./partials/category.css";
+@import "./partials/product.css";
 @import url("partials/productCard.css");
 
 :root {
@@ -28,5 +29,10 @@
 
 body{
   background-color: var(--gris-body);
+}
+
+main{
+  width: 92.7%;
+  margin: 0 auto;
 }
 
