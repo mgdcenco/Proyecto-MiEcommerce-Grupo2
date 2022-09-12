@@ -34,8 +34,8 @@ app.get("/product/:id", (req, res) => {
   let product = products.find((prod) => prod.id === productId);
   console.log(product);
   product !== undefined
-    ? res.render("product", { product, url })
-    : res.render("product", {error:true, url});
+    ? res.render("product", { product, url, error:false })
+    : res.render("product", { url, error:true});
 });
 
 app.get("/cart", (req, res) => {
