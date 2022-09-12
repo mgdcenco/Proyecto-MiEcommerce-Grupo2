@@ -6,6 +6,7 @@
 :root {
   --blanco: rgba(255, 255, 255, 1);
   --gris-claro: rgba(153, 153, 153, 1);
+  --gris-body: rgb(239, 239, 239);
   --gris-oscuro: rgba(73, 79, 81, 1);
   --verde: rgba(12, 176, 147, 1);
   --negro: rgba(0, 0, 0, 1);
@@ -23,5 +24,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: var(--gris-body);
 }
 
