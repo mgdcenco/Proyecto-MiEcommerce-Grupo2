@@ -29,9 +29,9 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/product/:id", (req, res) => {
-  const url = req.url;
   const productId = parseInt(req.params.id);
   let product = products.find((prod) => prod.id === productId);
+  const url = req.url;
   product !== undefined
   ? res.render("product", { product, url, error:false })
   : res.render("product", { url, error:true});
@@ -39,7 +39,11 @@ app.get("/product/:id", (req, res) => {
 
 app.get("/cart", (req, res) => {
   const url = req.url;
-  const productsInCart = products.splice(1, 3);
+  let numRandom = Math.round(Math.random() * products.length -3);
+  if(numRandom <= 0){
+    numRandom = 1;
+  }
+  const productsInCart = products.slice(numRandom, numRandom+3);
   res.render("cart", { products: productsInCart, url });
 });
 

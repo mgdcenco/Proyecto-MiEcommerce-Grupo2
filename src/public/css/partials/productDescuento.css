@@ -67,7 +67,7 @@
 }
 
 .main--partials-container--productos-en-descuento--cards{
-  width: 90%;
+  width: 100%;
 }
 
 @media (min-width: 769px){
