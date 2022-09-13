@@ -41,14 +41,14 @@
             </button>
           </div>
         </section>
-        <%} else {%> <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
-
         <h3>También te puede interesar</h3>
         <div class="product-list--cards">
           <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
           {"product":products[i]})%> <% } %>
         </div>
         <%-include("../partials/category.ejs")%>
+        <%} else {%> <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
+
       </div>
     </main>
     <%-include("../partials/footer.ejs")%>
