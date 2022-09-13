@@ -114,3 +114,9 @@
     width: 80%;
   }
 }
+
+@media (min-width: 1112px) {
+  .product-list--cards{
+    justify-content: space-between;
+  }
+}
