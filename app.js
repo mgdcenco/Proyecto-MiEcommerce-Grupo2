@@ -42,6 +42,11 @@ app.get("/cart", (req, res) => {
   res.render("cart", { products: productsInCart, url });
 });
 
+app.get("/cart/checkout", (req, res)=> {
+  const url = req.url;
+  res.render("checkout", { url })
+})
+
 app.get("*", (req, res) => {
   const url = req.url;
   res.render("error404", { url });
