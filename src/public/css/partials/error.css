@@ -30,3 +30,16 @@
     border-radius: 30px;
     text-decoration: none;
 }
+
+.error-page--container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer{
+    width: 100%;
+}
