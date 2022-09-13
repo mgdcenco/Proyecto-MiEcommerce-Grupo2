@@ -37,3 +37,9 @@
 body {
   background-color: var(--gris-body);
 }
+
+main{
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 90%;
+}
