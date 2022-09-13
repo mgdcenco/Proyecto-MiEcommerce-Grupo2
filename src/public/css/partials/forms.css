@@ -1,137 +1,137 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .background {
-    position: relative;
-    width: 100%;
-    height: 264px;
-    top: 64px;
-    background: #0CB093;
-    z-index: -1;
+  position: relative;
+  width: 100%;
+  height: 264px;
+  top: 64px;
+  background: #0cb093;
+  z-index: -1;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .formLogin {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    column-gap: 10px;
-    width: 320px;
-    height: 296px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    bottom: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  column-gap: 10px;
+  width: 320px;
+  height: 296px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  bottom: 140px;
 }
 
 .formRegister {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    column-gap: 10px;
-    width: 320px;
-    height: 344px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    bottom: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  column-gap: 10px;
+  width: 320px;
+  height: 344px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  bottom: 140px;
 }
 
 .heading {
-    width: 264px;
-    height: 48px;
-    left: 79px;
-    top: 170px;
-    margin-bottom: 10px;
+  width: 264px;
+  height: 48px;
+  left: 79px;
+  top: 170px;
+  margin-bottom: 10px;
 }
 
 .heading h2 {
-    position: relative;
-    left: 32px;
-    top: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 200;
-    font-size: 32px;
-    line-height: 44px;
+  position: relative;
+  left: 32px;
+  top: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  font-size: 32px;
+  line-height: 44px;
 }
 
 input {
-    box-sizing: border-box;
-    width: 256px;
-    height: 32px;
-    left: 512px;
-    top: 232px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 16px;
-    align-self: center;
-    bottom: 10px;
+  box-sizing: border-box;
+  width: 256px;
+  height: 32px;
+  left: 512px;
+  top: 232px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  align-self: center;
+  bottom: 10px;
 }
 
-
 ::placeholder {
-   position: relative;
-   color: rgba(0, 0, 0, 0.5);
-   left: 15px;
-} 
+  position: relative;
+  color: rgba(0, 0, 0, 0.5);
+  left: 15px;
+}
 
-button {
-    display: flex;
-    width: 256px;
-    height: 32px;
-    justify-content: center;
-    background: #494F51;
-    border-radius: 16px;
-    color: white;
-    align-self: center;
-    margin-bottom: 18px;
-    font-family: 'Open Sans';
-    letter-spacing: 0.5px;
+.formLogin button,
+.formRegister button {
+  display: flex;
+  width: 256px;
+  height: 32px;
+  justify-content: center;
+  background: #494f51;
+  border-radius: 16px;
+  color: white;
+  align-self: center;
+  margin-bottom: 18px;
+  font-family: "Open Sans";
+  letter-spacing: 0.5px;
 }
 
 p {
-    height: 16px;
-    left: 16px;
-    right: 16px;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
-    align-self: center;
-    justify-self: center;
-    color: #FFFFFF;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+  height: 16px;
+  left: 16px;
+  right: 16px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  align-self: center;
+  justify-self: center;
+  color: #ffffff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-span {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    bottom: 115px;
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 13px;
-    line-height: 16px;
-
+.aviso span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: 115px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 a {
-    color: #000000;
+  color: #000000;
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: -5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: -5px;
 }
