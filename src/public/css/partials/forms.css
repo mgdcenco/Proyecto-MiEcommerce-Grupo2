@@ -145,3 +145,13 @@ a {
   gap: 8px;
   margin-bottom: -7px;
 }
+
+.pagina {
+  height: 30vh;
+}
+
+@media screen and (min-width: 769px) {
+  .pagina {
+    height: 40vh;
+  }
+}
