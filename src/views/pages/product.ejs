@@ -3,54 +3,54 @@
   <%- include("../partials/head.ejs", {title:"Index"})%>
 
   <body>
-    <%- include('../partials/navbar') %>
-
-    <main class="main--partials">
-      <div class="main--partials-container">
-        <% if (!error){ %>
-        <div class="breadcrumb">
-          <a class="" href="/">Volver al listado</a
-          ><a href="" class=""><%=product.category%></a>
-        </div>
-        <section class="section-product-detail">
-          <div class="section-product-detail__images">
-            <div class="section-product-detail__images-banner">
-              <img src="<%=product.images[0]%>" alt="" />
-            </div>
-            <div class="section-product-detail__images-collection">
-              <%if(product.images.length>2){ %>
-              <img src="<%=product.images[1]%>" alt="<%=product.title%>" />
-              <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
-              <img src="<%=product.images[2]%>" alt="<%=product.title%>" />
-              <%}else if(product.images.length===2){ %>
-              <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
-              <img src="<%=product.images[1]%>" alt="<%=product.title%>" />
-              <%} else{%>
-              <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
-              <%}%>
-            </div>
-          </div>
-          <div class="section-product-detail__description">
-            <h2><%=product.title%></h2>
-            <h3 class="section-product-detail__description-price">
-              <%=product.price%> <span>PUNTOS</span>
-            </h3>
-            <p><%=product.description%></p>
-            <button class="section-product-detail__button">
-              Agregar al carrito
-            </button>
-          </div>
-        </section>
-        <h3>También te puede interesar</h3>
-        <div class="product-list--cards">
-          <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
+      <% if (!error){ %>
+        <%- include('../partials/navbar') %>
+        <main class="main--partials">
+            <div class="main--partials-container">
+                <div class="breadcrumb">
+                    <a class="" href="/">Volver al listado</a
+                        ><a href="" class=""><%=product.category%></a>
+                    </div>
+                    <section class="section-product-detail">
+                        <div class="section-product-detail__images">
+                            <div class="section-product-detail__images-banner">
+                                <img src="<%=product.images[0]%>" alt="" />
+                            </div>
+                            <div class="section-product-detail__images-collection">
+                                <%if(product.images.length>2){ %>
+                                    <img src="<%=product.images[1]%>" alt="<%=product.title%>" />
+                                    <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
+                                    <img src="<%=product.images[2]%>" alt="<%=product.title%>" />
+                                    <%}else if(product.images.length===2){ %>
+                                        <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
+                                        <img src="<%=product.images[1]%>" alt="<%=product.title%>" />
+                                        <%} else{%>
+                                            <img src="<%=product.images[0]%>" alt="<%=product.title%>" />
+                                            <%}%>
+                                        </div>
+                                    </div>
+                                    <div class="section-product-detail__description">
+                                        <h2><%=product.title%></h2>
+                                        <h3 class="section-product-detail__description-price">
+                                            <%=product.price%> <span>PUNTOS</span>
+                                        </h3>
+                                        <p><%=product.description%></p>
+                                        <button class="section-product-detail__button">
+                                            Agregar al carrito
+                                        </button>
+                                    </div>
+                                </section>
+                                <h3>También te puede interesar</h3>
+                                <div class="product-list--cards">
+                                    <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
           {"product":products[i]})%> <% } %>
         </div>
         <%-include("../partials/category.ejs")%>
-        <%} else {%> <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
-
-      </div>
-    </main>
-    <%-include("../partials/footer.ejs")%>
+        
+    </div>
+</main>
+<%} else {%> 
+    <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
+<%-include("../partials/footer.ejs")%>
   </body>
 </html>

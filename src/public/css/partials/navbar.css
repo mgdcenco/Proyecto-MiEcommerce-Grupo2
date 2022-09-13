@@ -1,5 +1,5 @@
 nav {
-  background-color: var(--gris-body);
+  background-color:none;
   backdrop-filter: blur(4px);
   height: 64px;
   padding: 16px;

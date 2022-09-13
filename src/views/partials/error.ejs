@@ -1,11 +1,17 @@
 <%if(prod){ %>
+    <%- include('../partials/navbar') %>
     <div class="error-page--container">
-    <section class="section-error">
-        <h1>Ups! Ha ocurrido un error al buscar ese producto!</h1>
-        <h2>Por favor, regrese a la pagina de inicio</h2>
-        <a href="/">Presione click aquí</a>
-    </section>
+        <main class="main--partials">
+            <div class="main--partials-container">
 
+                <section class="section-error">
+                    <h1>Ups! Ha ocurrido un error al buscar ese producto!</h1>
+                    <h2>Por favor, regrese a la pagina de inicio</h2>
+                    <a href="/">Presione click aquí</a>
+                </section>
+            </div>
+        </main>
+    </div>
 <%}else{%>
     <section class="section-error">
         <h1>Ups! No logramos localizar esa pagina!</h1>
