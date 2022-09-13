@@ -90,6 +90,7 @@ input {
 .formLogin button,
 .formRegister button {
   display: flex;
+  border: none;
   width: 256px;
   height: 32px;
   justify-content: center;
@@ -108,12 +109,14 @@ input {
   transition-duration: 0.3s;
 }
 
-.formLogin p,
-.formRegister p {
+.formLogin button a,
+.formRegister button a {
   height: 16px;
   left: 16px;
   right: 16px;
   font-weight: 300;
+  display: flex;
+  text-decoration: none;
   font-size: 12px;
   line-height: 16px;
   align-self: center;

@@ -91,11 +91,16 @@
   height: 32px;
   width: 100%;
   background-color: var(--gris-oscuro);
-  color: var(--blanco);
-  font-size: 12px;
   border-radius: 16px;
   margin-top: 16px;
   border: none;
+  color: var(--blanco);
+  font-size: 12px;
+}
+.section-product-detail__button a{
+    color: var(--blanco);
+    font-size: 12px;
+    text-decoration: none;
 }
 
 .button-container form{
