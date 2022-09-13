@@ -33,14 +33,21 @@
 }
 
 .qty-selector {
-  max-width: 78px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  width: 78px;
   height: 32px;
   border: 1px solid black;
   border-radius: 16px;
   display: flex;
-  justify-content: space-around;
+  gap: 7px;
   align-items: center;
-  padding: 0 15px;
+}
+
+.qty-selector-btn {
+  background: none;
+  border: none;
 }
 
 .product-img {
