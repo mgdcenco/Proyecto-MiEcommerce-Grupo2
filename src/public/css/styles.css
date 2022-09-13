@@ -1,6 +1,8 @@
 @import "./partials/product.css";
 @import url("./partials/navbar.css");
 @import url("./partials/footer.css");
+@import url("./partials/sidebar.css");
+@import "./partials/forms.css";
 @import "./partials/category.css";
 @import "./partials/error.css";
 @import url("partials/productCard.css");
