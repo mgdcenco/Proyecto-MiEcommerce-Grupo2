@@ -8,8 +8,10 @@
   <div class="product-details">
     <div><p><%= product.title %></p></div>
     <div class="cart-actions">
-      <button class="section-product-detail__button">Quitar</button>
-      <form action="/cart"><input type="number" min="10" max="100" /></form>
+      <div>
+        <button class="section-product-detail__button">Quitar</button>
+        <div class="qty-selector"><span>- 1 +</span></div>
+      </div>
       <span class="product-price"><%= product.price %></span>
     </div>
   </div>
