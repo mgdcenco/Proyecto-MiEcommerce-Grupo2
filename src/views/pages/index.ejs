@@ -5,7 +5,9 @@
     <%-include('../partials/navbar') %>
     <main class="main--partials">
       <div class="main--partials-container">
-        <%-include("../partials/category.ejs")%>
+        <section class="category-1">
+          <%-include("../partials/category.ejs")%>
+        </section>
       </div>
       <%-include("../partials/productDescuento.ejs") %>
       <div class="main--partials-container">
@@ -25,7 +27,9 @@
           <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
           {"product":products[i]})%> <% } %>
         </div>
-        <%-include("../partials/category.ejs")%>
+        <section class="category-2">
+          <%-include("../partials/category.ejs")%>
+        </section>
       </div>
     </main>
     <%-include("../partials/footer.ejs")%>

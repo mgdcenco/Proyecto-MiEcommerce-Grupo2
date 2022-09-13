@@ -1,14 +1,22 @@
-.main--partials{
-    display: flex;
-    flex-direction: column;
-    align-items: center
+.main--partials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.main--partials-container{
-    width: 100%;
+.main--partials-container {
+  width: 100%;
+}
+
+.category-1 {
+  margin: 0.5rem 0;
+}
+
+.category-2 {
+  margin: 2rem 0;
 }
 
 @media (min-width: 769px) {
-    .main--partials-container{
-        margin-top: 20px;
-    }
+  .main--partials-container {
+    margin-top: 20px;
+  }
 }
