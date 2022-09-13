@@ -17,12 +17,19 @@
 .product-list--card--image-container {
   height: 100%;
   width: 128px;
+  background-color: black;
+  border-radius: 16px;
 }
 
 .product-list--card--image-container--image {
   height: 100%;
   width: 100%;
   border-radius: 16px;
+  object-fit: contain;
+}
+
+.product-link {
+  text-decoration: none;
 }
 
 .product-list--card--text {
@@ -80,9 +87,9 @@
   .product-list--card--text--title {
     width: 70%;
     height: 90%;
-    border-right: solid 1px var(--gris-claro)
-}
-.product-list--card--text--price {
+    border-right: solid 1px var(--gris-claro);
+  }
+  .product-list--card--text--price {
     font-weight: 100;
     height: 100%;
     width: 28%;
@@ -91,5 +98,10 @@
     justify-content: start;
     font-size: 8px;
     margin-top: 5px;
+  }
+
+  .product-list--card--text--title > h3,
+  .product-list--card--text--price > h3 {
+    width: 80%;
   }
 }

@@ -2,15 +2,30 @@
 <html lang="en">
   <%- include("../partials/head.ejs", {title:"Index"})%>
   <body>
-    <%-include('../partials/navbar') %> 
+    <%-include('../partials/navbar') %>
     <main class="main--partials">
       <div class="main--partials-container">
         <%-include("../partials/category.ejs")%>
       </div>
-      <%-include("../partials/productDescuento.ejs") %> 
-        <div class="main--partials-container">
-        <%-include("../partials/productCard.ejs") %> 
-        <%-include("../partials/category.ejs")%> 
+      <%-include("../partials/productDescuento.ejs") %>
+      <div class="main--partials-container">
+        <div class="product-list">
+          <div class="product-list--h">
+            <h3>Te puede interesar</h3>
+          </div>
+          <div class="product-list--cards">
+            <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
+            {"product":products[i]})%> <% } %>
+          </div>
+        </div>
+        <div class="product-list--h">
+          <h3>Los más pedidos</h3>
+        </div>
+        <div class="product-list--cards">
+          <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
+          {"product":products[i]})%> <% } %>
+        </div>
+        <%-include("../partials/category.ejs")%>
       </div>
     </main>
     <%-include("../partials/footer.ejs")%>

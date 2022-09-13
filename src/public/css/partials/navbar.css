@@ -8,6 +8,9 @@ nav {
   align-items: center;
   gap: 10px;
   border-bottom: 2px solid #494f51;
+  position: fixed;
+  z-index: 80;
+  top: 0;
 }
 
 .search-input {

@@ -99,7 +99,8 @@ input {
   letter-spacing: 0.5px;
 }
 
-p {
+.formLogin p,
+.formRegister p {
   height: 16px;
   left: 16px;
   right: 16px;

@@ -38,8 +38,9 @@ body {
   background-color: var(--gris-body);
 }
 
-main{
+main {
   margin: 0 auto;
   max-width: 1024px;
   width: 90%;
+  margin-top: 80px;
 }
