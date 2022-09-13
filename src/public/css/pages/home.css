@@ -6,3 +6,9 @@
 .main--partials-container{
     width: 100%;
 }
+
+@media (min-width: 769px) {
+    .main--partials-container{
+        margin-top: 20px;
+    }
+}
