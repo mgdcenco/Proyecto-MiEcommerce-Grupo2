@@ -1,4 +1,5 @@
-<% if(url==="/login"||url==="/register") {%>
+<%-include("../partials/sidebar.ejs")%> <% if(url==="/login"||url==="/register")
+{%>
 <nav>
   <a href="/"><img src="/img/MiEcommerce.svg" alt="logo" /></a>
 </nav>
@@ -15,8 +16,6 @@
     </button>
   </form>
   <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
-  <a href="/profile" class="profile-link"
-    ><img src="/img/ProfileBtn.svg" alt="Profile Button"
-  /></a>
+  <img src="/img/ProfileBtn.svg" id="profileBtn" alt="Profile Button" />
 </nav>
 <% } %>

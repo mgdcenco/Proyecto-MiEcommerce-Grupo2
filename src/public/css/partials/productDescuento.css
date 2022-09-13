@@ -1,0 +1,91 @@
+.prod--containerWrapper {
+  background-image: url("/img/disneybg.jpg");
+  background-size: cover;
+  border-radius: 16px;
+  width: 100%;
+  height: 256px;
+  /* margin: 35px auto 33px; */
+  /* padding: 16px 24px; */
+  position: relative;
+  margin-top: 1rem;
+}
+
+.prod--img--container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  width: 100%;
+}
+
+.prod--img img {
+  width: 112px;
+  height: 112px;
+  border-radius: 8px;
+}
+
+.prod--text h5 {
+  font-weight: bolder;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.prod--text {
+  align-items: center;
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  margin-left: 1rem;
+}
+
+.main--partials-container--productos-en-descuento {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.main--partials-container--productos-en-descuento--bg {
+  height: 350px;
+  background: var(--verde);
+  width: 100%;
+  position: absolute;
+}
+
+.main--partials-container--productos-en-descuento {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main--partials--container--productos-en-descuento--cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main--partials-container--productos-en-descuento--cards{
+  width: 100%;
+}
+
+@media (min-width: 769px){
+  .main--partials-container--productos-en-descuento--cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main--partials-container--productos-en-descuento {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.main--partials-container--productos-en-descuento--bg {
+  height: 250px;
+  margin-top: 25px;
+}
+.prod--containerWrapper {
+  width: 49%;
+}
+}

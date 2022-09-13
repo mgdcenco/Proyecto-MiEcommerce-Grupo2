@@ -29,19 +29,26 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/product/:id", (req, res) => {
-  const url = req.url;
   const productId = parseInt(req.params.id);
   let product = products.find((prod) => prod.id === productId);
-  console.log(product);
+  const url = req.url;
   product !== undefined
-    ? res.render("product", { product, url })
-    : res.send("No se encuentra producto");
+  ? res.render("product", { product, url, error:false })
+  : res.render("product", { url, error:true});
 });
 
 app.get("/cart", (req, res) => {
   const url = req.url;
-  const productsInCart = products.splice(0, 2);
-  res.render("cart", { productsInCart, url });
+  let numRandom = Math.round(Math.random() * products.length -3);
+  if(numRandom <= 0){
+    numRandom = 1;
+  }
+  const productsInCart = products.slice(numRandom, numRandom+3);
+  res.render("cart", { products: productsInCart, url });
 });
 
+app.get("*", (req, res) => {
+  const url = req.url;
+  res.render("error404", { url });
+});
 app.listen(port, console.log(`listen on port ${3000}`));

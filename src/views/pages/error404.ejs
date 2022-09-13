@@ -5,12 +5,7 @@
     <%-include('../partials/navbar') %> 
     <main class="main--partials">
       <div class="main--partials-container">
-        <%-include("../partials/category.ejs")%>
-      </div>
-      <%-include("../partials/productDescuento.ejs") %> 
-        <div class="main--partials-container">
-        <%-include("../partials/productCard.ejs") %> 
-        <%-include("../partials/category.ejs")%> 
+        <%-include("../partials/error.ejs", {prod:false})%> 
       </div>
     </main>
     <%-include("../partials/footer.ejs")%>
