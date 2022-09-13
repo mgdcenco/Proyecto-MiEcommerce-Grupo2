@@ -7,7 +7,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 2px solid #494f51;
+  border-bottom: 1px solid #494f51;
   position: fixed;
   z-index: 80;
   top: 0;
