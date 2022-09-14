@@ -96,6 +96,12 @@
   border: none;
   color: var(--blanco);
   font-size: 12px;
+  transition: background-color 0.2s;
+}
+.section-product-detail__button:hover,
+.section-product-detail__button:active {
+  background-color: var(--verde);
+  cursor: pointer;
 }
 .section-product-detail__button a{
     color: var(--blanco);
