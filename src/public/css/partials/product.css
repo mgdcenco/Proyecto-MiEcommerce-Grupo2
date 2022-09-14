@@ -157,4 +157,8 @@
     order: 2;
     margin-top: 16px;
   }
+
+  .section-product-detail__description_h3{
+margin: 2rem 0;
+  }
 }
