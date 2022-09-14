@@ -49,6 +49,7 @@
 .qty-selector-btn {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .product-img {
@@ -107,7 +108,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: 0;
   }
 
-  .product-img img{
+  .product-img img {
     height: 100%;
     max-height: 68px;
   }
