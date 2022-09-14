@@ -3,13 +3,15 @@
   <%- include('../partials/head.ejs', {title:"Login"}) %>
   <body>
     <!-- Header -->
-
     <div class="forms-container">
-      <%- include('../partials/navbar.ejs') %> <%-
-      include('../partials/login.ejs') %> <%- include('../partials/footer.ejs')
-      %>
+      <div class="forms-container--partials">
+        <%- include('../partials/navbar.ejs') %> <%-
+        include('../partials/login.ejs') %> 
+      </div>
+      <%- include('../partials/footer.ejs')
+        %>
     </div>
-
+    
     <!-- Footer -->
   </body>
 </html>

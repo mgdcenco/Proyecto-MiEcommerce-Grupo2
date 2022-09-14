@@ -2,27 +2,29 @@
   width: 100%;
   margin: 1rem 0;
 }
+.product-list--cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .product-list--cards--card {
   height: 144px;
   background-color: var(--blanco);
   display: flex;
+  gap: 1rem;
   padding: 0.5rem;
-  justify-content: space-between;
   border-radius: 16px;
-  margin: 0.5rem 0;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: box-shadow 0.2s ease;
 }
 
-.product-list--cards--card:hover{
+.product-list--cards--card:hover {
   box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.24);
 }
 
 .product-list--card--image-container {
-  height: 100%;
   width: 128px;
-  background-color: black;
   border-radius: 16px;
 }
 
@@ -30,15 +32,15 @@
   height: 100%;
   width: 100%;
   border-radius: 16px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .product-link {
   text-decoration: none;
+  margin: 0.5rem 0;
 }
 
 .product-list--card--text {
-  height: 100%;
   width: 55%;
   display: flex;
   flex-direction: column;
@@ -55,58 +57,66 @@
 
 .product-list--card--text--price {
   font-weight: 100;
-  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-size: 8px;
 }
 
+.product-list--card--text--price p {
+  margin-top: 0.5rem;
+}
+
 @media (min-width: 769px) {
   .product-list--cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
   }
   .product-list--cards--card {
     width: 244px;
-    height: 328px;
+    height: 100%;
     display: inline-block;
-    margin-left: 0.5rem;
   }
   .product-list--card--image-container {
-    height: 70%;
     width: initial;
   }
   .product-list--card--image-container--image {
+    margin-bottom: 3px;
     border-radius: inherit;
+    height: 240px;
   }
   .product-list--card--text {
     flex-direction: row;
     justify-content: inherit;
     width: 100%;
-    height: 30%;
-    align-items: center;
-    padding: 0.5rem;
+    padding: 0 0.5rem;
+    gap: 0.5rem;
   }
   .product-list--card--text--title {
     width: 70%;
-    height: 90%;
     border-right: solid 1px var(--gris-claro);
+    height: 64px;
   }
+
   .product-list--card--text--price {
     font-weight: 100;
-    height: 100%;
     width: 28%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     font-size: 8px;
-    margin-top: 5px;
   }
 
   .product-list--card--text--title > h3,
   .product-list--card--text--price > h3 {
     width: 80%;
+  }
+}
+
+@media (min-width: 1112px) {
+  .product-list--cards{
+    justify-content: space-between;
   }
 }
