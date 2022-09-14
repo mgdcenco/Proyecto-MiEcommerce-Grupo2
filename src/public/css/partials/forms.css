@@ -118,16 +118,15 @@ input {
 
 .formLogin button a,
 .formRegister button a {
-  height: 16px;
-  left: 16px;
-  right: 16px;
+  height: 100%;
+  width: 100%;
   font-weight: 300;
   display: flex;
   text-decoration: none;
   font-size: 12px;
   line-height: 16px;
-  align-self: center;
-  justify-self: center;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
