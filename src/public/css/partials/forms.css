@@ -110,10 +110,15 @@ input {
   letter-spacing: 0.5px;
 }
 
+.formLogin button:hover,
+.formRegister button:hover {
+  background: var(--verde);
+  transition-duration: 0.2s;
+}
 .formLogin button:active,
 .formRegister button:active {
   background: var(--verde);
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
 }
 
 .formLogin button a,

@@ -94,16 +94,21 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .cart-actions {
-    width: 100%;
+    width: 60%;
     justify-content: flex-end;
   }
 
   .product-price {
-    width: 120px;
+    width: 80px;
     justify-content: flex-end;
   }
 
   .product-img {
     margin-bottom: 0;
+  }
+
+  .product-img img{
+    height: 100%;
+    max-height: 68px;
   }
 }
