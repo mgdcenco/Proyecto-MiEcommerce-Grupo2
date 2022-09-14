@@ -129,6 +129,7 @@
     margin-top: 0;
     order: -10;
     display: flex;
+    width: 65%;
   }
   .section-product-detail__images-banner {
     order: 1;
@@ -152,8 +153,11 @@
 
   .section-product-detail__description {
     display: flex;
-    width: 30%;
+    width: 35%;
     max-width: 320px;
+    border: 1px solid var(--gris-claro);
+    padding: 0 10px;
+    border-radius: 8px;
     flex-direction: column;
   }
   .section-product-detail h2 {
