@@ -1,3 +1,13 @@
+.cart-containerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.cart-containerWrapper-partials {
+  margin-top: 64px;
+}
 .cart-container {
   padding: 0 16px;
   margin-top: 80px;
