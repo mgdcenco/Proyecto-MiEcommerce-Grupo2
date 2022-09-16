@@ -1,4 +1,5 @@
-const products = require("../../data/products.json");
+// const products = require("../../data/products.json");
+const products = require("../data/api");
 
 module.exports = {
     showCart: function (req, res) {
