@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const products = require("./data/products.json");
 
-app.use(express.static("./src/public"));
+app.use(express.static("./public"));
 app.set("views", "./src/views/pages");
 
 app.set("view engine", "ejs");
@@ -51,4 +51,4 @@ app.get("*", (req, res) => {
   const url = req.url;
   res.render("error404", { url });
 });
-app.listen(port, console.log(`listen on port ${3000}`));
+app.listen(port, console.log(`listen on port ${port}`));
