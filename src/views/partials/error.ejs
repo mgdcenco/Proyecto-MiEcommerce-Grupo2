@@ -9,6 +9,15 @@
                     <h2>Por favor, regrese a la pagina de inicio</h2>
                     <a href="/">Presione click aquí</a>
                 </section>
+    <%- include('../partials/category') %>
+
+                <div class="product-list--h">
+                    <h3>Los más pedidos</h3>
+                  </div>
+                  <div class="product-list--cards">
+                    <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
+                    {"product":products[i]})%> <% } %>
+                  </div>
             </div>
         </main>
     </div>

@@ -43,7 +43,7 @@
                                 <h3 class="section-product-detail__description_h3">También te puede interesar</h3>
                                 <div class="product-list--cards">
                                     <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
-          {"product":products[i]})%> <% } %>
+          {"product":productsByCategory[i]})%> <% } %>
         </div>
         <section class="category-2">
         <%-include("../partials/category.ejs")%>

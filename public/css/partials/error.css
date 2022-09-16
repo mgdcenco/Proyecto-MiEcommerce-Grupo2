@@ -32,12 +32,12 @@
 }
 
 .error-page--container {
-    height: 83vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 footer{
@@ -45,7 +45,4 @@ footer{
 }
 
 @media(min-width:769px){
-    .error-page--container {
-        height: 90vh;
-    }
 }
