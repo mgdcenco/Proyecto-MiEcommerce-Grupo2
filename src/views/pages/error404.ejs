@@ -2,14 +2,9 @@
 <html lang="en">
   <%- include("../partials/head.ejs", {title:"Index"})%>
   <body>
-    <div class="error-page--container">
-      <%-include('../partials/navbar', noSearchBox) %> 
-      <main class="main--partials">
-        <div class="main--partials-container">
-          <%-include("../partials/error.ejs", {prod:false})%> 
-        </div>
-      </main>
-      <%-include("../partials/footer.ejs")%>
-    </div> 
+    <%-include('../partials/navbar', noSearchBox) %> 
+    <%-include("../partials/error.ejs", {prod:false})%> 
+
+    <%-include("../partials/footer.ejs")%>
   </body>
 </html>
