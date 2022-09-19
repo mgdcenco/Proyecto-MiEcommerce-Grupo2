@@ -6,6 +6,9 @@
     background: var(--verde);
     height: 500px;
     color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-error--message--elements {
@@ -27,6 +30,7 @@ span.section-error--message--elements--number {
     height: 130%;
     width: auto;
     left: 9%;
+    /* left: 9%; */
     /* left: 21%; */
     animation: rotateIn 1.5s ease-out;
 }
@@ -54,9 +58,9 @@ span.section-error--message--elements--number {
     padding-bottom: 2rem;
 }
 
-.section-error--button {
+.section-error--button, .section-error--magic--button {
     height: 32px;
-    width: 10vw;
+    padding: 0 1rem;
     background-color: var(--verde-oscuro);
     border-radius: 16px;
     margin-top: 16px;
@@ -65,6 +69,27 @@ span.section-error--message--elements--number {
     font-size: 12px;
     transition: background-color 0.2s;
   }
+
+.magic-redirect-icon {
+    position: absolute;
+    z-index: 99999;
+    font-size: 0vw;
+    color: #fff;
+    opacity: 0.7;
+    top: 200px;
+    display: none;
+    animation: redirect 0.8s ease-in-out;
+}
+
+@keyframes redirect {
+    from {
+      font-size: 0vw
+    }
+    to {
+        font-size: 30vw 
+    }
+  }
+
   .section-error--button:hover,
   .section-error--button:active {
     background-color: var(--verde);
@@ -109,4 +134,7 @@ footer{
 }
 
 @media(min-width:769px){
+    .section-error+main{
+        margin-top: 10px;
+    }
 }
