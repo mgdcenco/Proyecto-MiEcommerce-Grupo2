@@ -1,10 +1,9 @@
+let noSearchBox = true;
 module.exports = {
     showLogin: function (req, res) {
-        const url = req.url;
-        res.render("login", { url });
+        res.render("login", {noSearchBox });
     },
     showRegister: function (req, res) {
-        const url = req.url;
-        res.render("register", { url });
+        res.render("register", { noSearchBox });
     },
 }
