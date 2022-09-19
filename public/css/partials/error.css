@@ -17,6 +17,7 @@
     align-items: center;
     position: relative;
     width: 35vw;
+    min-width: 320px;
     max-width: 360px;
 }
 
@@ -27,7 +28,7 @@ span.section-error--message--elements--number {
 
 .section-error--message--elements img {
     position: absolute;
-    height: 130%;
+    height: 115%;
     width: auto;
     left: 9%;
     /* left: 9%; */
@@ -53,23 +54,33 @@ span.section-error--message--elements--number {
 }
 
 .section-error--description {
-    width: 50vw;
+    width: 80vw;
     text-align: center;
     padding-bottom: 2rem;
 }
 
+.section-error--button--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 .section-error--button, .section-error--magic--button {
     height: 32px;
     padding: 0 1rem;
+    cursor: pointer;
     background-color: var(--verde-oscuro);
     border-radius: 16px;
-    margin-top: 16px;
     border: none;
     color: var(--blanco);
     font-size: 12px;
-    transition: background-color 0.2s;
-  }
+    transition: background-color 0.2s, color 0.2s;
+}
 
+.section-error--button:active, .section-error--magic--button:active {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+}
 .magic-redirect-icon {
     position: absolute;
     z-index: 99999;
@@ -136,5 +147,21 @@ footer{
 @media(min-width:769px){
     .section-error+main{
         margin-top: 10px;
+    }
+
+
+    .section-error--message--elements {
+        min-width: 345px;
+    }
+    .section-error--message--elements img {
+        height: 130%;
+    }
+    .section-error--description {
+        width: 50vw;
+    }
+
+    .section-error--button:hover, .section-error--magic--button:hover {
+        background-color: var(--blanco);
+        color: var(--verde-oscuro);
     }
 }
