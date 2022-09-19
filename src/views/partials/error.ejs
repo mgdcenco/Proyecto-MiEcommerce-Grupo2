@@ -5,35 +5,26 @@
             <div class="section-error--message">
                 <div class="section-error--message--elements">
                     <span class="section-error--message--elements--number">4</span>
-                    <!-- 
-                    -->
                     <img src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" width="400px"> 
                     <!-- 
                     <img src="https://cdn.discordapp.com/attachments/1014622941473943592/1021444569356840990/Fer.png" width="400px"> -->
                     <span class="section-error--message--elements--number">4</span>
                 </div>
                 <div class="section-error--description">
-                    <h3>Ops! Parece que no hemos podido encontrar la página que estabas buscando :(</h3>
+                    <h3>Ops! Parece que no hemos podido encontrar el producto que estabas buscando :(</h3>
                     <h3>Pero no te preocupes! Puedes depositar tu suerte en nuestro botón mágico o 
                     volver a nuestra home para encontrar lo que buscas!</h3>
 
                 </div>
                 <div class="section-error--button--container">
                     <button class="section-error--button">Volver a la home</button>
-                    <!-- <form action="" method="get">
-                    </form> -->
+                   
                     <button class="section-error--magic--button" id="magic-button">Quiero tener suerte  <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
                 </div>
             </div>
         </section>
         <main class="main--partials">
             <div class="main--partials-container">
-
-                <!-- <section class="section-error">
-                    <h1>Ups! Ha ocurrido un error al buscar ese producto!</h1>
-                    <h2>Por favor, regrese a la pagina de inicio</h2>
-                    <a href="/">Presione click aquí</a>
-                </section> -->
     <%- include('../partials/category') %>
 
                 <div class="product-list--h">
@@ -49,9 +40,26 @@
     </div>
 <%}else{%>
     <section class="section-error">
-        <h1>Ups! No logramos localizar esa pagina!</h1>
-        <h2>Por favor, regrese a la pagina de inicio</h2>
-        <a href="/">Presione click aquí</a>
+        <div class="section-error--message">
+            <div class="section-error--message--elements">
+                <span class="section-error--message--elements--number">4</span>
+                <img src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" width="400px"> 
+                <!-- 
+                <img src="https://cdn.discordapp.com/attachments/1014622941473943592/1021444569356840990/Fer.png" width="400px"> -->
+                <span class="section-error--message--elements--number">4</span>
+            </div>
+            <div class="section-error--description">
+                <h3>Ops! Parece que no hemos podido encontrar la página que estabas buscando :(</h3>
+                <h3>Pero no te preocupes! Puedes depositar tu suerte en nuestro botón mágico o 
+                volver a nuestra home para encontrar lo que buscas!</h3>
+
+            </div>
+            <div class="section-error--button--container">
+                <button class="section-error--button">Volver a la home</button>
+               
+                <button class="section-error--magic--button" id="magic-button">Quiero tener suerte  <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
+            </div>
+        </div>
     </section>
     </div>
 <%}%>
