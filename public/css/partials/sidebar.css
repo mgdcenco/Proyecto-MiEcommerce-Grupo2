@@ -1,3 +1,7 @@
+body {
+  animation: fade-in 0.7s ease-in;
+}
+
 .side-bar {
   height: 100%;
   width: 206px;

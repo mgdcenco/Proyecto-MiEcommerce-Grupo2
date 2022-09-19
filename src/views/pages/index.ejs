@@ -25,7 +25,7 @@
         </div>
         <div class="product-list--cards">
           <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
-          {"product":products[i]})%> <% } %>
+          {"product":mostPopular[i]})%> <% } %>
         </div>
         <section class="category-2">
           <%-include("../partials/category.ejs")%>
