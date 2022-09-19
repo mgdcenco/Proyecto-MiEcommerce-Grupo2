@@ -4,12 +4,12 @@
 
   <body>
       <% if (!error){ %>
-        <%- include('../partials/navbar') %>
+        <%- include('../partials/navbar' ,noSearchBox) %>
         <main class="main--partials">
             <div class="main--partials-container">
                 <div class="breadcrumb">
                     <a class="" href="/">Volver al listado</a
-                        ><a href="" class=""><%=product.category%></a>
+                        ><a href="/category/<%=product.category%>" class=""><%=product.category%></a>
                     </div>
                     <section class="section-product-detail">
                         <div class="section-product-detail__images">

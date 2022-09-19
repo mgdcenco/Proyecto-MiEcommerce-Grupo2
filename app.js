@@ -11,7 +11,7 @@ routes(app);
 app.set("view engine", "ejs");
 
 app.get("*", (req, res) => {
-  const url = req.url;
-  res.render("error404", { url });
+  let noSearchBox = false;
+  res.render("error404", { noSearchBox});
 });
 app.listen(port, console.log(`listen on port ${port}`));
