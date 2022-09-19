@@ -18,6 +18,7 @@
     position: relative;
     width: 35vw;
     max-width: 360px;
+    min-width: 310px;
 }
 
 span.section-error--message--elements--number {
@@ -27,7 +28,7 @@ span.section-error--message--elements--number {
 
 .section-error--message--elements img {
     position: absolute;
-    height: 130%;
+    height: 110%;
     width: auto;
     left: 9%;
     /* left: 9%; */
@@ -53,7 +54,7 @@ span.section-error--message--elements--number {
 }
 
 .section-error--description {
-    width: 50vw;
+    width: 80vw;
     text-align: center;
     padding-bottom: 2rem;
 }
@@ -63,11 +64,16 @@ span.section-error--message--elements--number {
     padding: 0 1rem;
     background-color: var(--verde-oscuro);
     border-radius: 16px;
-    margin-top: 16px;
+    margin-top: 5px;
     border: none;
     color: var(--blanco);
+    cursor: pointer;
     font-size: 12px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
+  }
+.section-error--button:hover, .section-error--magic--button:hover {
+    background-color: var(--blanco);
+    color: var(--verde);
   }
 
 .magic-redirect-icon {
@@ -92,7 +98,6 @@ span.section-error--message--elements--number {
 
   .section-error--button:hover,
   .section-error--button:active {
-    background-color: var(--verde);
     cursor: pointer;
   }
 
@@ -136,5 +141,24 @@ footer{
 @media(min-width:769px){
     .section-error+main{
         margin-top: 10px;
+    }
+
+    .section-error--message--elements {
+        width: 35vw;
+        min-width: 350px;
+    }
+
+    .section-error--message--elements img {
+        height: 130%;
+    }
+
+    .section-error--description {
+        width: 50vw;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .section-error--button, .section-error--magic--button {
+        margin-top: 16px;
     }
 }
