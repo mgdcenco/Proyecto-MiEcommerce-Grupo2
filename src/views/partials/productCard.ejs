@@ -2,7 +2,7 @@
   <div class="product-list--cards--card">
     <div class="product-list--card--image-container">
       <img
-        src="<%= product.images[product.images.length-1]%>"
+        src="<%=(product.images.length > 0)? product.images[product.images.length-1]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>"
         alt=""
         class="product-list--card--image-container--image"
       />
