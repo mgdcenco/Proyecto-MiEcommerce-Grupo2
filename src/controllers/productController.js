@@ -11,7 +11,8 @@ module.exports = {
       const productsByCategory = products.filter(pro => pro.category == product.category)
       res.render("product", { product, error: false, products, productsByCategory,noSearchBox })
     }else{
-      res.render("product", { error: true, products, noSearchBox });
+      const mostPopular = [...products].sort((product1, product2)=> product2.rating.count - product1.rating.count);
+      res.render("product", { error: true, products:mostPopular, noSearchBox });
     }
-  },
+  }
 };
