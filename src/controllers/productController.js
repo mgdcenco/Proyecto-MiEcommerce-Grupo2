@@ -44,28 +44,15 @@ module.exports = {
       const searchQuery = req.query.search;
       let noSearchBox = false;
       let products = await getProducts();
-      const mostPopular = [...products].sort(
-        (product1, product2) => product2.rating.count - product1.rating.count
-      );
       const results = products.filter((pro) =>
         pro.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
       res.render("searchResults", {
         products: results,
-        mostPopular,
         error: false,
         results,
         noSearchBox,
       });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-
-  showFer: async (req, res) => {
-    try {
-      let products = await getProducts();
-      res.render("errorBonus", { products });
     } catch (err) {
       console.log(err);
     }
