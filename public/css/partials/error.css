@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .section-error--message--elements {
@@ -24,6 +25,8 @@
 span.section-error--message--elements--number {
     font-size: 10rem;
     font-weight: 900;
+    position: relative;
+    z-index: 5;
 }
 
 .section-error--message--elements img {
@@ -46,7 +49,18 @@ span.section-error--message--elements--number {
       opacity: 1;
     }
   }
+#error-gif404Mobile{
+    position: absolute;
+    height: 42%;
+    z-index: -1;
+    left: 5px;
+    bottom: 25%;
 
+    animation: none
+}
+#error-gif404{
+    display: none;
+}
 .section-error--message {
     display: flex;
     align-items: center;
@@ -156,6 +170,21 @@ footer{
     .section-error--message--elements img {
         height: 130%;
     }
+
+    #error-gif404Mobile{
+        display: none;
+    }
+
+    #error-gif404{
+        display: initial;
+        position: absolute;
+        height: 60%;
+        left: 0;
+        bottom: 0;
+        animation: none
+    }
+    
+
     .section-error--description {
         width: 50vw;
     }
