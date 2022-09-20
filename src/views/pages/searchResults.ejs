@@ -16,7 +16,7 @@
             <div class="product-list--h">
               <h3>Resultados de la búsqueda <%= products.length %> </h3>
             </div>
-            <div class="product-list--cards">
+            <div class="product-list--cards search-results">
                 <% for(i=0;i<products.length;i++) {%>
                     <%-include("../partials/productCard.ejs", {"product":products[i]})%> 
                 <% }%>
