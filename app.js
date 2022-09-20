@@ -12,6 +12,6 @@ app.set("view engine", "ejs");
 
 app.get("*", (req, res) => {
   let noSearchBox = false;
-  res.render("error404", { noSearchBox});
+  res.render("error404", { noSearchBox });
 });
 app.listen(port, console.log(`listen on port ${port}`));
