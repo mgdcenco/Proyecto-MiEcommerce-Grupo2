@@ -1,7 +1,7 @@
 <article class="product-in-cart">
   <div class="product-img">
     <img
-      src="<%= product.images[product.images.length-1] %>"
+      src="<%=(product.images.length > 0)? product.images[product.images.length-1]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>"
       alt="<%= product.title %>"
     />
   </div>
