@@ -1,80 +1,86 @@
-<%if(prod){ %>
-    <%- include('../partials/navbar', noSearchBox) %>
-    <div class="error-page--container">
-        <section class="section-error">
-            <div class="section-error--message">
-                <div class="section-error--message--elements">
-                    <span class="section-error--message--elements--number">4</span>
-                    <img src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" width="400px"> 
-                    <!-- 
+<%if(prod){ %> <%- include('../partials/navbar', noSearchBox) %>
+<div class="error-page--container">
+  <section class="section-error">
+    <div class="section-error--message">
+      <div class="section-error--message--elements">
+        <span class="section-error--message--elements--number">4</span>
+        <img
+          src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png"
+          width="400px"
+        />
+        <!-- 
                     <img src="https://cdn.discordapp.com/attachments/1014622941473943592/1021444569356840990/Fer.png" width="400px"> -->
-                    <span class="section-error--message--elements--number">4</span>
-                </div>
-                <div class="section-error--description">
-                    <h3>Ops! Parece que no hemos podido encontrar el producto que estabas buscando :(</h3>
-                    <h3>Pero no te preocupes! Puedes depositar tu suerte en nuestro botón mágico o 
-                    volver a nuestra home para encontrar lo que buscas!</h3>
+        <span class="section-error--message--elements--number">4</span>
+      </div>
+      <div class="section-error--description">
+        <h3>
+          Ops! Parece que no hemos podido encontrar el producto que estabas
+          buscando :(
+        </h3>
+        <h3>
+          Pero no te preocupes! Puedes depositar tu suerte en nuestro botón
+          mágico o volver a nuestra home para encontrar lo que buscas!
+        </h3>
+      </div>
+      <div class="section-error--button--container">
+        <button class="section-error--button">Volver a la home</button>
 
-                </div>
-                <div class="section-error--button--container">
-                    <button class="section-error--button">Volver a la home</button>
-                   
-                    <button class="section-error--magic--button" id="magic-button">Quiero tener suerte  <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
-                </div>
-            </div>
-        </section>
-        <main class="main--partials">
-            <div class="main--partials-container">
-    <%- include('../partials/category') %>
-
-                <div class="product-list--h">
-                    <h3>Los más pedidos</h3>
-                  </div>
-                  <div class="product-list--cards">
-                    <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
-                    {"product":products[i]})%> <% } %>
-                  </div>
-            </div>
-        </main>
-        <i class="fa-sharp fa-solid fa-wand-magic-sparkles magic-redirect-icon"></i>
+        <button class="section-error--magic--button" id="magic-button">
+          Quiero tener suerte
+          <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+      </div>
     </div>
-<%}else{%>
-    <%- include('../partials/navbar', noSearchBox) %>
+  </section>
+  <main class="main--partials">
+    <div class="main--partials-container">
+      <%- include('../partials/category') %>
 
-    <div class="error-page--container">
-
-        <section class="section-error">
-            <div class="section-error--message">
-                <div class="section-error--message--elements">
-                    <span class="section-error--message--elements--number">4</span>
-                    <!-- <img src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png" width="400px">  -->
-                    <span class="section-error--message--elements--number">0        <img id="error-gif404Mobile" src="https://user-images.githubusercontent.com/617637/87246274-abf8f680-c44c-11ea-92e9-d1ee74ba5984.gif" alt="">
-                    </span>
-                    <!-- 
-                    <img src="https://cdn.discordapp.com/attachments/1014622941473943592/1021444569356840990/Fer.png" width="400px"> -->
-                    <span class="section-error--message--elements--number">4</span>
-                </div>
-                <img id="error-gif404" src="https://user-images.githubusercontent.com/617637/87246274-abf8f680-c44c-11ea-92e9-d1ee74ba5984.gif" alt="">
-                <div class="section-error--description">
-                    <h3>Ops! Parece que no contamos con el URL <%= path %> en nuestro servidor.</h3>
-                    <h3>No te preocupes! Puedes depositar tu suerte en nuestro botón mágico para ver algun producto o 
-                    volver a nuestra home para encontrar lo que buscas!</h3>
-
-                </div>
-                <div class="section-error--button--container">
-                    <button class="section-error--button">Volver a la home</button>
-                
-                    <button class="section-error--magic--button" id="magic-button">Quiero tener suerte  <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i></button>
-                </div>
-            </div>
-        </section>
-        <main class="main--partials">
-            <div class="main--partials-container">
-                <%- include('../partials/category') %>
-                  
-            </div>
-        </main>
-        <i class="fa-sharp fa-solid fa-wand-magic-sparkles magic-redirect-icon"></i>
+      <div class="product-list--h">
+        <h3>Los más pedidos</h3>
+      </div>
+      <div class="product-list--cards">
+        <% for(i=0;i<=7;i++){%> <%-include("../partials/productCard.ejs",
+        {"product":products[i]})%> <% } %>
+      </div>
     </div>
+  </main>
+  <i class="fa-sharp fa-solid fa-wand-magic-sparkles magic-redirect-icon"></i>
+</div>
+<%}else{%> <%- include('../partials/navbar', noSearchBox) %>
+
+<div class="error-page--container">
+  <section class="section-error">
+    <div class="section-error--message">
+      <div class="section-error--message--elements">
+        <span class="section-error--message--elements--number">4</span>
+        <img
+          src="https://staticdelivery.nexusmods.com/mods/1151/images/528-0-1447526230.png"
+          width="400px"
+        />
+        <span class="section-error--message--elements--number">4</span>
+      </div>
+      <div class="section-error--description">
+        <h3>
+          Ops! Parece que no hemos podido encontrar la página que estabas
+          buscando :(
+        </h3>
+        <h3>
+          Pero no te preocupes! Puedes depositar tu suerte en nuestro botón
+          mágico o volver a nuestra home para encontrar lo que buscas!
+        </h3>
+      </div>
+      <div class="section-error--button--container">
+        <button class="section-error--button">Volver a la home</button>
+
+        <button class="section-error--magic--button" id="magic-button">
+          Quiero tener suerte
+          <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <i class="fa-sharp fa-solid fa-wand-magic-sparkles magic-redirect-icon"></i>
+</div>
 
 <%}%>

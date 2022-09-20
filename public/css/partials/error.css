@@ -1,126 +1,131 @@
-.section-error{
-    width: 100%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 16px;
-    margin: 64px 0 0 0 ;
-    background: var(--verde);
-    height: 500px;
-    color: var(--blanco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+.section-error {
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  margin: 64px 0 0 0;
+  background: var(--verde);
+  height: 500px;
+  color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .section-error--message--elements {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 35vw;
-    min-width: 320px;
-    max-width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 35vw;
+  min-width: 320px;
+  max-width: 360px;
 }
 
 span.section-error--message--elements--number {
-    font-size: 10rem;
-    font-weight: 900;
-    position: relative;
-    z-index: 5;
+  font-size: 10rem;
+  font-weight: 900;
+  position: relative;
+  z-index: 5;
 }
 
 .section-error--message--elements img {
-    position: absolute;
-    height: 115%;
-    width: auto;
-    z-index: 100;
-    left: 9%;
-    /* left: 9%; */
-    /* left: 21%; */
-    animation: rotateIn 1.5s ease-out;
+  position: absolute;
+  height: 115%;
+  width: auto;
+  z-index: 100;
+  left: 9%;
+  /* left: 21%; */
+  animation: rotateIn 1.5s ease-out;
+}
+
+.section-error--message--elements img.easter-egg {
+  left: 20%;
 }
 
 @keyframes rotateIn {
-    from {
-      transform: rotate( 0deg ) scale(0.2);
-      opacity: 0;
-    }
-    to {
-      transform: rotate( 1440deg ) scale(1);
-      opacity: 1;
-    }
+  from {
+    transform: rotate(0deg) scale(0.2);
+    opacity: 0;
   }
-#error-gif404Mobile{
-    position: absolute;
-    height: 42%;
-    z-index: -1;
-    left: 5px;
-    bottom: 25%;
-
-    animation: none
+  to {
+    transform: rotate(1440deg) scale(1);
+    opacity: 1;
+  }
 }
-#error-gif404{
-    display: none;
+#error-gif404Mobile {
+  position: absolute;
+  height: 42%;
+  z-index: -1;
+  left: 5px;
+  bottom: 25%;
+
+  animation: none;
+}
+#error-gif404 {
+  display: none;
 }
 .section-error--message {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .section-error--description {
-    width: 80vw;
-    text-align: center;
-    padding-bottom: 2rem;
+  width: 80vw;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.section-error--button--container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.section-error--button--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.section-error--button, .section-error--magic--button {
-    height: 32px;
-    padding: 0 1rem;
-    cursor: pointer;
-    background-color: var(--verde-oscuro);
-    border-radius: 16px;
-    border: none;
-    color: var(--blanco);
-    font-size: 12px;
-    transition: background-color 0.2s, color 0.2s;
+.section-error--button,
+.section-error--magic--button {
+  height: 32px;
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: var(--verde-oscuro);
+  border-radius: 16px;
+  border: none;
+  color: var(--blanco);
+  font-size: 12px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.section-error--button:active, .section-error--magic--button:active {
-    background-color: var(--blanco);
-    color: var(--verde-oscuro);
+.section-error--button:active,
+.section-error--magic--button:active {
+  background-color: var(--blanco);
+  color: var(--verde-oscuro);
 }
 .magic-redirect-icon {
-    position: absolute;
-    z-index: 99999;
-    font-size: 0vw;
-    color: #fff;
-    opacity: 0.7;
-    top: 200px;
-    display: none;
-    animation: redirect 0.8s ease-in-out;
+  position: absolute;
+  z-index: 99999;
+  font-size: 0vw;
+  color: #fff;
+  opacity: 0.7;
+  top: 200px;
+  display: none;
+  animation: redirect 0.8s ease-in-out;
 }
 
 @keyframes redirect {
-    from {
-      font-size: 0vw
-    }
-    to {
-        font-size: 30vw 
-    }
+  from {
+    font-size: 0vw;
   }
+  to {
+    font-size: 30vw;
+  }
+}
 
-  .section-error--button:hover,
-  .section-error--button:active {
-    background-color: var(--verde);
-    cursor: pointer;
-  }
+.section-error--button:hover,
+.section-error--button:active {
+  background-color: var(--verde);
+  cursor: pointer;
+}
 
 /* .section-error > h1{
     font-size: var(--header1);
@@ -131,67 +136,66 @@ span.section-error--message--elements--number {
     font-size: var(--header3);
 } */
 
-.section-error > a{
-    display: inline-block;
-    height: 50px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gris-oscuro);
+.section-error > a {
+  display: inline-block;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gris-oscuro);
 
-    margin: 30px 30px;
-    color: var(--blanco);
-    border-radius: 30px;
-    text-decoration: none;
+  margin: 30px 30px;
+  color: var(--blanco);
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .error-page--container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-footer{
-    width: 100%;
+footer {
+  width: 100%;
 }
 
-@media(min-width:769px){
-    .section-error+main{
-        margin-top: 10px;
-    }
+@media (min-width: 769px) {
+  .section-error + main {
+    margin-top: 10px;
+  }
 
+  .section-error--message--elements {
+    min-width: 345px;
+  }
+  .section-error--message--elements img {
+    height: 130%;
+  }
 
-    .section-error--message--elements {
-        min-width: 345px;
-    }
-    .section-error--message--elements img {
-        height: 130%;
-    }
+  #error-gif404Mobile {
+    display: none;
+  }
 
-    #error-gif404Mobile{
-        display: none;
-    }
+  #error-gif404 {
+    display: initial;
+    position: absolute;
+    height: 60%;
+    left: 0;
+    bottom: 0;
+    animation: none;
+  }
 
-    #error-gif404{
-        display: initial;
-        position: absolute;
-        height: 60%;
-        left: 0;
-        bottom: 0;
-        animation: none
-    }
-    
+  .section-error--description {
+    width: 50vw;
+  }
 
-    .section-error--description {
-        width: 50vw;
-    }
-
-    .section-error--button:hover, .section-error--magic--button:hover {
-        background-color: var(--blanco);
-        color: var(--verde-oscuro);
-    }
+  .section-error--button:hover,
+  .section-error--magic--button:hover {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+  }
 }
