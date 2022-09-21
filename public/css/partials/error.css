@@ -20,6 +20,7 @@
     width: 35vw;
     min-width: 320px;
     max-width: 360px;
+    min-width: 310px;
 }
 
 span.section-error--message--elements--number {
@@ -88,9 +89,11 @@ span.section-error--message--elements--number {
     border-radius: 16px;
     border: none;
     color: var(--blanco);
+    cursor: pointer;
     font-size: 12px;
     transition: background-color 0.2s, color 0.2s;
 }
+
 
 .section-error--button:active, .section-error--magic--button:active {
     background-color: var(--blanco);
@@ -118,7 +121,6 @@ span.section-error--message--elements--number {
 
   .section-error--button:hover,
   .section-error--button:active {
-    background-color: var(--verde);
     cursor: pointer;
   }
 
@@ -164,10 +166,10 @@ footer{
         margin-top: 10px;
     }
 
-
     .section-error--message--elements {
         min-width: 345px;
     }
+
     .section-error--message--elements img {
         height: 130%;
     }
@@ -193,5 +195,6 @@ footer{
     .section-error--button:hover, .section-error--magic--button:hover {
         background-color: var(--blanco);
         color: var(--verde-oscuro);
+
     }
 }
