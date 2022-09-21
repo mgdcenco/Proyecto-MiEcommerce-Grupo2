@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs', {title:"Register"}) %>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/navbar.ejs', noSearchBox) %> 
+
+    <main class="main--partials">
+        <div class="main--partials-container">
+          <section class="category-1">
+            <%-include("../partials/category.ejs")%>
+          </section>
+        </div>
+        <div class="main--partials-container">
+          <div class="product-list">
+            <div class="product-list--h">
+              <h3>Resultados de la búsqueda <%= products.length %> </h3>
+            </div>
+            <div class="product-list--cards search-results">
+                <% for(i=0;i<products.length;i++) {%>
+                    <%-include("../partials/productCard.ejs", {"product":products[i]})%> 
+                <% }%>
+            </div>
+          </div>
+          <section class="category-2">
+            <%-include("../partials/category.ejs")%>
+          </section>
+        </div>
+      </main>
+     <!-- Footer -->
+     <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

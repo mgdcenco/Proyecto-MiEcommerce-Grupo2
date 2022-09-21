@@ -66,6 +66,11 @@
   height: 100%;
   width: 48px;
   border-radius: 8px;
+  cursor: pointer;
+  transition: outline 0.2s;
+}
+.section-product-detail__images-collection > img:hover, .section-product-detail__images-collection > img:active {
+  outline: 1px solid var(--gris-oscuro);
 }
 .section-product-detail__images-collection > img:not(:last-child) {
   margin-right: 8px;

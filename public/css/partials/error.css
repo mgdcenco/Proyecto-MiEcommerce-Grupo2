@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .section-error--message--elements {
@@ -17,6 +18,7 @@
     align-items: center;
     position: relative;
     width: 35vw;
+    min-width: 320px;
     max-width: 360px;
     min-width: 310px;
 }
@@ -24,12 +26,15 @@
 span.section-error--message--elements--number {
     font-size: 10rem;
     font-weight: 900;
+    position: relative;
+    z-index: 5;
 }
 
 .section-error--message--elements img {
     position: absolute;
-    height: 110%;
+    height: 115%;
     width: auto;
+    z-index: 100;
     left: 9%;
     /* left: 9%; */
     /* left: 21%; */
@@ -46,7 +51,18 @@ span.section-error--message--elements--number {
       opacity: 1;
     }
   }
+#error-gif404Mobile{
+    position: absolute;
+    height: 42%;
+    z-index: -1;
+    left: 5px;
+    bottom: 25%;
 
+    animation: none
+}
+#error-gif404{
+    display: none;
+}
 .section-error--message {
     display: flex;
     align-items: center;
@@ -59,23 +75,30 @@ span.section-error--message--elements--number {
     padding-bottom: 2rem;
 }
 
+.section-error--button--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 .section-error--button, .section-error--magic--button {
     height: 32px;
     padding: 0 1rem;
+    cursor: pointer;
     background-color: var(--verde-oscuro);
     border-radius: 16px;
-    margin-top: 5px;
     border: none;
     color: var(--blanco);
     cursor: pointer;
     font-size: 12px;
     transition: background-color 0.2s, color 0.2s;
-  }
-.section-error--button:hover, .section-error--magic--button:hover {
-    background-color: var(--blanco);
-    color: var(--verde);
-  }
+}
 
+
+.section-error--button:active, .section-error--magic--button:active {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+}
 .magic-redirect-icon {
     position: absolute;
     z-index: 99999;
@@ -144,21 +167,34 @@ footer{
     }
 
     .section-error--message--elements {
-        width: 35vw;
-        min-width: 350px;
+        min-width: 345px;
     }
 
     .section-error--message--elements img {
         height: 130%;
     }
 
-    .section-error--description {
-        width: 50vw;
-        text-align: center;
-        padding-bottom: 2rem;
+    #error-gif404Mobile{
+        display: none;
     }
 
-    .section-error--button, .section-error--magic--button {
-        margin-top: 16px;
+    #error-gif404{
+        display: initial;
+        position: absolute;
+        height: 60%;
+        left: 0;
+        bottom: 0;
+        animation: none
+    }
+    
+
+    .section-error--description {
+        width: 50vw;
+    }
+
+    .section-error--button:hover, .section-error--magic--button:hover {
+        background-color: var(--blanco);
+        color: var(--verde-oscuro);
+
     }
 }

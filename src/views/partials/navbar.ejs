@@ -1,27 +1,42 @@
-<%-include("../partials/sidebar.ejs")%> <% if(noSearchBox)
-{%>
-  <header>
-    <nav>
-      <a href="/"><img src="/img/MiEcommerce.svg" alt="logo" /></a>
-    </nav>
-  </header>
+<%-include("../partials/sidebar.ejs")%> <% if(noSearchBox) {%>
+<header>
+  <nav>
+    <a href="/"><img src="/img/MiEcommerce.svg" alt="logo" /></a>
+  </nav>
+</header>
 <% } else { %>
-  <header>
-    <nav>
-      <a href="/"
-        ><img class="logo-mobile" src="/img/MiE.svg" alt="logo" />
-        <img class="logo-desktop" src="/img/MiEcommerce.svg" alt="logo"
-      /></a>
-      <form action="/" class="search-form">
-        <input class="search-input" type="text" placeholder="Buscar productos..." />
-        <button type="submit">
-          <img src="/img/magnify.svg" alt="" />
-        </button>
-      </form>
-      <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
-      <img src="/img/ProfileBtn.svg" class="logo-mobile profileBtn" alt="Profile Button" />
-      <img src="/img/ProfileBtnBg.svg" class="logo-desktop profileBtn" alt="Profile Button" />
-    </nav>
-
-  </header>
+<header>
+  <nav>
+    <a href="/"
+      ><img class="logo-mobile" src="/img/MiE.svg" alt="logo" />
+      <img class="logo-desktop" src="/img/MiEcommerce.svg" alt="logo"
+    /></a>
+    <form
+      action="http://localhost:3000/products/search"
+      method="get"
+      class="search-form"
+    >
+      <input
+        name="search"
+        class="search-input"
+        type="text"
+        placeholder="Buscar productos..."
+      />
+      <button type="submit">
+        <img src="/img/magnify.svg" alt="" />
+      </button>
+    </form>
+    <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
+    <img
+      src="/img/ProfileBtn.svg"
+      class="logo-mobile profileBtn"
+      alt="Profile Button"
+    />
+    <img
+      src="/img/ProfileBtnBg.svg"
+      class="logo-desktop profileBtn"
+      alt="Profile Button"
+    />
+  </nav>
+</header>
 <% } %>
