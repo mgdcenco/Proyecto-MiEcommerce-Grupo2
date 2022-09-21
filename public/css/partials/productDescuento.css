@@ -1,5 +1,10 @@
 .prod--containerWrapper {
-  background-image: url("/img/disneybg.jpg");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("/img/disneybg.jpg");
   background-size: cover;
   border-radius: 16px;
   width: 100%;
@@ -67,11 +72,11 @@
   align-items: center;
 }
 
-.main--partials-container--productos-en-descuento--cards{
+.main--partials-container--productos-en-descuento--cards {
   width: 100%;
 }
 
-@media (min-width: 769px){
+@media (min-width: 769px) {
   .main--partials-container--productos-en-descuento {
     width: 100%;
     display: flex;
