@@ -1,6 +1,8 @@
 nav {
   background-color:none;
   backdrop-filter: blur(4px);
+  -o-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   height: 64px;
   padding: 16px;
   width: 100vw;
@@ -60,6 +62,7 @@ button[type="submit"] {
 
   .logo-desktop {
     display: block;
+    cursor: pointer;
   }
 
   .search-form {
