@@ -34,7 +34,7 @@ span.section-error--message--elements--number {
     position: absolute;
     height: 115%;
     width: auto;
-    z-index: 100;
+    z-index: 10;
     left: 9%;
     /* left: 9%; */
     /* left: 21%; */
