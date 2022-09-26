@@ -72,6 +72,9 @@
 .section-product-detail__images-collection > img:hover, .section-product-detail__images-collection > img:active {
   outline: 1px solid var(--gris-oscuro);
 }
+.image-product-active{
+  outline: 1px solid var(--gris-oscuro);
+}
 .section-product-detail__images-collection > img:not(:last-child) {
   margin-right: 8px;
 }

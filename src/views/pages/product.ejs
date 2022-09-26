@@ -17,13 +17,10 @@
                                 <img class="section-product-detail__images-primary" src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>" alt="" />
                             </div>
                             <div class="section-product-detail__images-collection">
-                                <%if(product.images.length>2){ %>
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[1]%>" alt="<%=product.title%>" />
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[0]%>" alt="<%=product.title%>" />
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[2]%>" alt="<%=product.title%>" />
-                                    <%}else if(product.images.length===2){ %>
-                                        <img class="section-product-detail__images-collection-img" src="<%=product.images[0]%>" alt="<%=product.title%>" />
-                                        <img class="section-product-detail__images-collection-img" src="<%=product.images[1]%>" alt="<%=product.title%>" />
+                                <%if(product.images.length>1){ %>
+                                    <% for(let i = 0; i < product.images.length; i++){%>
+                                        <img class="section-product-detail__images-collection-img" src="<%=product.images[i]%>" alt="<%=product.title%>" />
+                                    <% } %>
                                         <%} else{%>
                                             <img class="section-product-detail__images-collection-img" src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>" alt="<%=product.title%>" />
                                             <%}%>
