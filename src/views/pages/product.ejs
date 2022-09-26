@@ -3,56 +3,85 @@
   <%- include("../partials/head.ejs", {title:"Index"})%>
 
   <body>
-      <% if (!error){ %>
-        <%- include('../partials/navbar' ,noSearchBox) %>
-        <main class="main--partials">
-            <div class="main--partials-container">
-                <div class="breadcrumb">
-                    <a class="" href="/">Volver al listado</a
-                        ><a href="/category/<%=product.category%>" class=""><%=product.category%></a>
-                    </div>
-                    <section class="section-product-detail">
-                        <div class="section-product-detail__images">
-                            <div class="section-product-detail__images-banner">
-                                <img class="section-product-detail__images-primary" src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>" alt="" />
-                            </div>
-                            <div class="section-product-detail__images-collection">
-                                <%if(product.images.length>2){ %>
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[1]%>" alt="<%=product.title%>" />
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[0]%>" alt="<%=product.title%>" />
-                                    <img class="section-product-detail__images-collection-img" src="<%=product.images[2]%>" alt="<%=product.title%>" />
-                                    <%}else if(product.images.length===2){ %>
-                                        <img class="section-product-detail__images-collection-img" src="<%=product.images[0]%>" alt="<%=product.title%>" />
-                                        <img class="section-product-detail__images-collection-img" src="<%=product.images[1]%>" alt="<%=product.title%>" />
-                                        <%} else{%>
-                                            <img class="section-product-detail__images-collection-img" src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>" alt="<%=product.title%>" />
-                                            <%}%>
-                                        </div>
-                                    </div>
-                                    <div class="section-product-detail__description">
-                                        <h2><%=product.title%></h2>
-                                        <h3 class="section-product-detail__description-price">
-                                            <%=product.price%> <span>PUNTOS</span>
-                                        </h3>
-                                        <p><%=product.description%></p>
-                                        <button class="section-product-detail__button"><a href="/cart">
-                                            Agregar al carrito</a>
-                                        </button>
-                                    </div>
-                                </section>
-                                <h3 class="section-product-detail__description_h3">También te puede interesar</h3>
-                                <div class="product-list--cards">
-                                    <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
+    <% if (!error){ %> <%- include('../partials/navbar' ,noSearchBox) %>
+    <main class="main--partials">
+      <div class="main--partials-container">
+        <div class="breadcrumb">
+          <a class="" href="/">Volver al listado</a
+          ><a href="/category/<%=product.category%>" class=""
+            ><%=product.category%></a
+          >
+        </div>
+        <section class="section-product-detail">
+          <div class="section-product-detail__images">
+            <div class="section-product-detail__images-banner">
+              <img
+                class="section-product-detail__images-primary"
+                src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>"
+                alt=""
+              />
+            </div>
+            <div class="section-product-detail__images-collection">
+              <%if(product.images.length>2){ %>
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=product.images[1]%>"
+                alt="<%=product.title%>"
+              />
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=product.images[0]%>"
+                alt="<%=product.title%>"
+              />
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=product.images[2]%>"
+                alt="<%=product.title%>"
+              />
+              <%}else if(product.images.length===2){ %>
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=product.images[0]%>"
+                alt="<%=product.title%>"
+              />
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=product.images[1]%>"
+                alt="<%=product.title%>"
+              />
+              <%} else{%>
+              <img
+                class="section-product-detail__images-collection-img"
+                src="<%=(product.images.length > 0)? product.images[0]: `https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg`%>"
+                alt="<%=product.title%>"
+              />
+              <%}%>
+            </div>
+          </div>
+          <div class="section-product-detail__description">
+            <h2><%=product.title%></h2>
+            <h3 class="section-product-detail__description-price">
+              <%=product.price%> <span>PUNTOS</span>
+            </h3>
+            <p><%=product.description%></p>
+            <button class="section-product-addToCart__button">
+              <span>Agregar al carrito</span>
+            </button>
+          </div>
+        </section>
+        <h3 class="section-product-detail__description_h3">
+          También te puede interesar
+        </h3>
+        <div class="product-list--cards">
+          <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
           {"product":productsByCategory[i]})%> <% } %>
         </div>
         <section class="category-2">
-        <%-include("../partials/category.ejs")%>
+          <%-include("../partials/category.ejs")%>
         </section>
-        
-    </div>
-</main>
-<%} else {%> 
-    <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
-<%-include("../partials/footer.ejs")%>
+      </div>
+    </main>
+    <%} else {%> <%- include("../partials/error.ejs", {prod:true}) %> <% }%>
+    <%-include("../partials/footer.ejs")%>
   </body>
 </html>
