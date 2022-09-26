@@ -111,21 +111,33 @@ input[type="text"], input[type="password"] {
   margin-bottom: 18px;
   font-family: "Open Sans";
   letter-spacing: 0.5px;
+  align-items: center;
+}
+
+.formRegister--submit-button-inactive{
+  opacity: 0.4;
+}
+
+.formRegister--submit-button-active{
+  cursor: pointer;
 }
 
 .formLogin button:hover,
-.formRegister button:hover {
+.formRegister--submit-button-active:hover
+
+{
   background: var(--verde);
   transition-duration: 0.2s;
 }
 .formLogin button:active,
-.formRegister button:active {
+.formRegister--submit-button-active:active
+{
   background: var(--verde);
   transition-duration: 0.2s;
 }
 
-.formLogin button a,
-.formRegister button a {
+.formLogin button a
+{
   height: 100%;
   width: 100%;
   font-weight: 300;

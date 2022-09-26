@@ -1,7 +1,7 @@
 <div class="background"></div>
 <div class="pagina">
   <div class="container">
-    <form class="formRegister">
+    <form class="formRegister" id="registerForm">
       <div class="heading">
         <h2>¡Registrate!</h2>
       </div>
@@ -21,11 +21,10 @@
         <input
           type="password"
           placeholder="Repite tu contraseña"
-          id="passwordNew"
+          id="passwordRepeated"
         />
       </div>
-
-      <button><a href="/">Crear Cuenta</a></button>
+      <button type="submit" class="formRegister--submit-button-inactive" id="registerFormButton" disabled>Crear Cuenta</button>
     </form>
   </div>
 
