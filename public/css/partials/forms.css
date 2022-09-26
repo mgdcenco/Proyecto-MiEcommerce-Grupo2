@@ -49,7 +49,6 @@
   justify-content: space-evenly;
   column-gap: 10px;
   width: 320px;
-  height: 344px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
@@ -62,6 +61,11 @@
   left: 79px;
   top: 170px;
   margin-bottom: 10px;
+}
+
+.formRegister .heading{
+  height: 70px;
+  margin-top: 10px;
 }
 
 .heading h2 {
@@ -112,6 +116,10 @@ input[type="text"], input[type="password"] {
   font-family: "Open Sans";
   letter-spacing: 0.5px;
   align-items: center;
+}
+
+.formRegister button {
+  margin: 38px 0;
 }
 
 .formRegister--submit-button-inactive{
@@ -172,7 +180,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 9.5px;
-  margin-bottom: -7px;
+  /* margin-bottom: -7px; */
 }
 
 .pagina {
