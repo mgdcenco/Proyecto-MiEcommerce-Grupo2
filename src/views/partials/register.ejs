@@ -7,26 +7,39 @@
       </div>
       
       <div class="inputs">
-        <label for="name"></label>
-        <input type="text" placeholder="Tu nombre" id="name" />
-        <label for="lastname"></label>
-        <input type="text" placeholder="Tu apellido" id="lastname" />
-        <label for="username"></label>
-        <input type="text" placeholder="Tu email" id="username" />
-
-        <label for="password"></label>
+        <div class="formRegister--name-container">
+          <label for="name"></label>
+          <input type="text" placeholder="Tu nombre" id="name" />
+        <i class="fa-solid fa-circle-question password-error-alert"></i>
+        </div>
+        <div class="formRegister--lastname-container">
+          <label for="lastname"></label>
+          <input type="text" placeholder="Tu apellido" id="lastname" />
+        <i class="fa-solid fa-circle-question password-error-alert"></i>
+        </div>
+        <div class="formRegister--password-username">
+          <label for="username"></label>
+          <input type="text" placeholder="Tu email" id="username" />
+        <i class="fa-solid fa-circle-question password-error-alert"></i>
+        </div>
+        <div class="formRegister--password-container">
+          <label for="password"></label>
         <input
           type="password"
           placeholder="Tu nueva contraseña"
           id="password"
         />
-
-        <label for="password"></label>
-        <input
-          type="password"
-          placeholder="Repite tu contraseña"
-          id="passwordRepeated"
-        />
+        <i class="fa-solid fa-circle-question password-error-alert"></i>
+        </div>
+        <div class="formRegister--repeatedPassword-container">
+          <label for="password"></label>
+          <input
+            type="password"
+            placeholder="Repite tu contraseña"
+            id="passwordRepeated"
+          />
+        <i class="fa-solid fa-circle-question password-error-alert"></i>
+        </div>
       </div>
       <button type="submit" class="formRegister--submit-button-inactive" id="registerFormButton" disabled>Crear Cuenta</button>
     </form>
