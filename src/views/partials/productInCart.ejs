@@ -9,10 +9,11 @@
     <div class="product-title"><p><%= product.title %></p></div>
     <div class="cart-actions">
       <div>
-        <button class="section-product-detail__button">Quitar</button>
+        <button class="section-product-remove__button">Quitar</button>
         <div class="qty-selector">
-          <button class="qty-selector-btn">-</button><span>1</span
-          ><button class="qty-selector-btn">+</button>
+          <button class="qty-selector-btn-decrement">-</button>
+          <div class="total-qty">1</div>
+          <button class="qty-selector-btn-increment">+</button>
         </div>
       </div>
       <span class="product-price"><%= product.price %></span>
