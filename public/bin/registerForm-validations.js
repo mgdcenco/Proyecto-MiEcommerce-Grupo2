@@ -23,24 +23,20 @@ if (registerFormButton) {
     passwordRepeated = registerFormRepeatedPassword.value;
     validProvider = false;
     
-    let atSign = username.lastIndexOf('@') + 1;
-    let dot = username.lastIndexOf('.');
-    let emailProvider = username.slice(atSign, dot)
+    let atSign = username.lastIndexOf('@'); // Obtiene la posición del @ en el email del usuario
+    let emailProvider = username.slice(atSign); // Obtiene el proveedor de email, ej test@gmail.com devuelve @gmail.com.
+    let emailName = username.slice(0, atSign); // Obtiene el nombre del nombre, siguiendo el ejemplo anterior devuelve test
 
-    if (emailProvider == "gmail" || emailProvider == "yahoo" || emailProvider == "outlook" || emailProvider == "hotmail"){
+    if (emailProvider == "@gmail.com" && emailName != " "|| emailProvider == "@yahoo.com" || emailProvider == "@outlook.com"){
         validProvider = true;
     }
 
-    console.log(validProvider);
-
-    if (name != "" && lastname != "" && password != "" && passwordRepeated != "" && password.length >= 8 && password == passwordRepeated && validProvider) {
-        console.log("Boton habilitado");
+    if (name != "" && name[0] != " " && name[name.length - 1] != " " && lastname != "" && lastname[0] != " " && lastname[lastname.length - 1] != " "  && password != "" && passwordRepeated != "" && password.length >= 8 && password == passwordRepeated && validProvider && emailName != "") {
         registerFormButton.removeAttribute("disabled");
         registerFormButton.classList.remove("formRegister--submit-button-inactive");
         registerFormButton.classList.add("formRegister--submit-button-active");
     }
-    else if(name == "" || lastname == "" || username == "" || password == "" || passwordRepeated == "" || !validProvider){
-        console.log("Boton inhabilitado");
+    else if(name == " " || name[0] == " " || name[name.length - 1] == " " || lastname == "" || lastname[0] == " " || lastname[lastname.length - 1] == " " || username == "" || password == "" || passwordRepeated == "" || !validProvider || password != passwordRepeated || emailName == ""){
         registerFormButton.setAttribute("disabled", "");
         registerFormButton.classList.add("formRegister--submit-button-inactive");
         registerFormButton.classList.remove("formRegister--submit-button-active");
