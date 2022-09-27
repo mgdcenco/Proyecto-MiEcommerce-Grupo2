@@ -21,6 +21,16 @@ profileBtn.forEach((prop) => {
   });
 });
 
+document.addEventListener("click", (event) => {
+  if (
+    event.target.parentNode !== dropDown &&
+    event.target.parentNode !== dropDownList &&
+    event.target.parentNode !== themeButton &&
+    event.target.parentNode !== profileBtnContainer
+  ) {
+    dropDown.style.display = "none";
+  }
+});
 
 darkBg.addEventListener("click", () => {
   sideBar.style.display = "none";
