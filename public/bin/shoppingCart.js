@@ -13,6 +13,8 @@ localStorage.setItem("shoppingCart", JSON.stringify(cart));
 if (cartContainer) {
   window.addEventListener("load", async () => {
     let userId = localStorage.getItem("id");
+    let cartList = document.querySelector(".cart-list");
+
     let promesas = await Promise.all([getProducts(), getUserCart(0)]);
     let getProductsResult = promesas[0];
     let getUserCartResult = promesas[1];
@@ -21,12 +23,55 @@ if (cartContainer) {
     for (let i = 0; i < getProductsResult.length; i++) {
       for (let j = 0; j < getUserCartResult.length; j++) {
         if (getProductsResult[i].id === getUserCartResult[j].id) {
-          cartArray.push(getProductsResult[i]);
+          console.log(getUserCartResult[j]);
+          let product = {
+            ...getProductsResult[i],
+            quantity: getUserCartResult[j].quantity,
+          };
+          cartArray.push(product);
         }
       }
     }
+
     console.log(cartArray);
+    let cart = renderCart(cartArray);
+    cartList.innerHTML = cart;
   });
+
+  function renderCart(cartArray) {
+    let productCart = cartArray
+      .map((product) => {
+        return `<article class="product-in-cart">
+      <div class="product-img">
+        <img
+          src="${
+            product.images.length > 0
+              ? product.images[product.images.length - 1]
+              : "https://raw.githubusercontent.com/koehlersimon/fallback/master/Resources/Public/Images/placeholder.jpg"
+          }"
+          alt="${product.title}"
+        />
+      </div>
+      <div class="product-details">
+        <div class="product-title"><p>${product.title}</p></div>
+        <div class="cart-actions">
+          <div>
+            <button class="section-product-remove__button">Quitar</button>
+            <div class="qty-selector">
+              <button class="qty-selector-btn-decrement">-</button>
+              <div class="total-qty">${product.quantity}</div>
+              <button class="qty-selector-btn-increment">+</button>
+            </div>
+          </div>
+          <span class="product-price">${product.price}</span>
+        </div>
+      </div>
+    </article>
+    `;
+      })
+      .join(" ");
+    return productCart;
+  }
 
   async function getUserCart(id) {
     let loggedUser = await fetch(`http://localhost:5000/api/cart/${id}`);
@@ -42,7 +87,7 @@ if (cartContainer) {
   }
 }
 
-if (incrementButton) {
+/* if (incrementButton) {
   incrementButton.addEventListener("click", () => {
     console.log("INCREMENT EVENT");
   });
@@ -59,3 +104,4 @@ if (removeButton) {
     console.log(removeButton);
   });
 }
+ */
