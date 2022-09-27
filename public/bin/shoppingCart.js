@@ -28,19 +28,22 @@ if (cartContainer) {
     }
 
     console.log(cartArray);
+    localStorage.setItem("shoppingCart", JSON.stringify(cartArray));
     let cart = renderCart(cartArray);
     cartList.innerHTML = cart;
   });
 
   function incrementProduct(id) {
     let qty = document.querySelector(".total-qty");
-    let updatedQty = parseInt(qty.innerText) + 1;
-    qty.innerText = updatedQty;
-    updateQuantity(id, updatedQty);
+    if (parseInt(qty.innerText) > 0) {
+      let updatedQty = parseInt(qty.innerText) + 1;
+      qty.innerText = updatedQty;
+      updateQuantity(id, updatedQty);
+    }
   }
   function decrementProduct(id) {
     let qty = document.querySelector(".total-qty");
-    if (qty.innerTex) {
+    if (parseInt(qty.innerText) > 0) {
       let updatedQty = parseInt(qty.innerText) - 1;
       qty.innerText = updatedQty;
       updateQuantity(id, updatedQty);
@@ -82,7 +85,7 @@ if (cartContainer) {
               })">+</button>
             </div>
           </div>
-          <span class="product-price">${product.price}</span>
+          <span class="product-price">${product.price * product.quantity}</span>
         </div>
       </div>
     </article>
