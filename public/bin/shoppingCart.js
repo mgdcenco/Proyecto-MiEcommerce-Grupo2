@@ -1,9 +1,3 @@
-const addToCartButton = document.querySelector(
-  ".section-product-addToCart__button"
-);
-const incrementButton = document.querySelector(".qty-selector-btn-increment");
-const decrementbutton = document.querySelector(".qty-selector-btn-decrement");
-const removeButton = document.querySelector(".section-product-remove__button");
 const cartContainer = document.querySelector(".cart-container");
 
 /* let cart = [{}];
@@ -38,6 +32,17 @@ if (cartContainer) {
     cartList.innerHTML = cart;
   });
 
+  function incrementProduct() {
+    window.location.reload();
+    console.log("INCREMENT");
+  }
+  function decrementProduct() {
+    console.log("DECREMENTT");
+  }
+  function deleteProduct() {
+    console.log("DEleteee");
+  }
+
   function renderCart(cartArray) {
     let productCart = cartArray
       .map((product) => {
@@ -56,11 +61,11 @@ if (cartContainer) {
         <div class="product-title"><p>${product.title}</p></div>
         <div class="cart-actions">
           <div>
-            <button class="section-product-remove__button">Quitar</button>
+            <button class="section-product-remove__button" onclick="deleteProduct()">Quitar</button>
             <div class="qty-selector">
-              <button class="qty-selector-btn-decrement">-</button>
+              <button class="qty-selector-btn-decrement" onclick="decrementProduct()">-</button>
               <div class="total-qty">${product.quantity}</div>
-              <button class="qty-selector-btn-increment">+</button>
+              <button class="qty-selector-btn-increment" onclick="incrementProduct()">+</button>
             </div>
           </div>
           <span class="product-price">${product.price}</span>
@@ -86,22 +91,3 @@ if (cartContainer) {
     return result;
   }
 }
-
-/* if (incrementButton) {
-  incrementButton.addEventListener("click", () => {
-    console.log("INCREMENT EVENT");
-  });
-}
-
-if (decrementbutton) {
-  decrementbutton.addEventListener("click", () => {
-    console.log("DECREMENT EVENT");
-  });
-}
-
-if (removeButton) {
-  removeButton.addEventListener("click", () => {
-    console.log(removeButton);
-  });
-}
- */
