@@ -96,8 +96,6 @@ if (registerFormButton) {
     0,
   ];
 
-  //   registerForm.addEventListener("keyup", () => {
-
   let validName = false;
   let validLastname = false;
   let validUsername = false;
@@ -105,154 +103,173 @@ if (registerFormButton) {
   let validRepeatedPassword = false;
   let validProvider = false;
 
-
-  registerFormName.addEventListener("keyup", () => {
-    name = registerFormName.value;
-    if (name != "" && name[0] != " " && name[name.length - 1] != " ") {
-      validName = true;
-      HideElements(nameErrorAlert, nameErrorMessage);
+  let checkTrueValidation = () => {
+        
+    if( validName && validLastname && validUsername && validProvider && validPassword && validRepeatedPassword){
+        enableRegisterFormButton()
     }
+}
 
-    // Validación a false del input Nombre
-
-    if (name.length != 0)
-      [
-        symbols.map((symbol) => {
-          // Valida los simbolos en el nombre
-          if (name.includes(symbol)) {
-            validName = false;
-            nameErrorMessage.innerHTML = errorMessages[2];
-            ShowElements(nameErrorMessage, nameErrorAlert);
-          }
-          // Valida los simbolos en el apellido
-          // if (lastname.includes(symbol)) {
-          //   validLastname = false;
-          //   lastnameErrorMessage.innerHTML = errorMessages[2];
-          //   ShowElements(lastnameErrorMessage, lastnameErrorAlert);
-          // }
-        }),
-      ];
-
-    if (name == "") {
-      validName = false;
-      nameErrorMessage.innerHTML = errorMessages[0];
-      ShowElements(nameErrorMessage, nameErrorAlert);
-    }
-    if (name[0] == " " || name[name.length - 1] == " ") {
-      validName = false;
-      nameErrorMessage.innerHTML = errorMessages[1];
-      ShowElements(nameErrorMessage, nameErrorAlert);
-
-      nameErrorAlert.style.display = "inline";
-    }
-  });
-
-  registerFormLastname.addEventListener("keyup", () => {
-    lastname = registerFormLastname.value;
+let checkFalseValidation = () => {
     if (
-      lastname != "" &&
-      lastname[0] != " " &&
-      lastname[lastname.length - 1] != " "
-    ) {
-      validLastname = true;
-      HideElements(lastnameErrorAlert, lastnameErrorMessage);
-    }
+        !validName ||
+        !validLastname ||
+        !validUsername ||
+        !validProvider ||
+        !validPassword ||
+        !validRepeatedPassword
+      ) {
+        disabledRegisterFormButton();
+      }
+}
 
-    if (name.length != 0)
-      [
+   
+    registerFormName.addEventListener("keyup", () => {
+        name = registerFormName.value;
+        
+        if (
+          name != "" &&
+          name[0] != " " &&
+          name[name.length - 1] != " "
+        ) {
+          validName = true;
+          HideElements(nameErrorAlert, nameErrorMessage);
+          console.log(name.length)
+        }
+  
+        if (name.length != 0) {
+          symbols.map((symbol) => {
+            if (name.includes(symbol)) {
+              validName = false;
+              nameErrorMessage.innerHTML = errorMessages[2];
+              ShowElements(nameErrorMessage, nameErrorAlert);
+            }
+          });
+        }
+  
+        // Validación a false del input Apellido
+        if (name == "") {
+          validName = false;
+          ShowElements(nameErrorMessage, nameErrorAlert);
+          nameErrorMessage.innerHTML = errorMessages[0];
+        }
+        if (name[0] == " " || name[name.length - 1] == " ") {
+          validName = false;
+          ShowElements(nameErrorMessage, nameErrorAlert);
+          nameErrorMessage.innerHTML = errorMessages[1];
+        }
+        checkTrueValidation();
+        checkFalseValidation();
+      });
+
+    registerFormLastname.addEventListener("keyup", () => {
+      lastname = registerFormLastname.value;
+      if (
+        lastname != "" &&
+        lastname[0] != " " &&
+        lastname[lastname.length - 1] != " "
+      ) {
+        validLastname = true;
+        HideElements(lastnameErrorAlert, lastnameErrorMessage);
+      }
+
+      if (lastname.length != 0) {
         symbols.map((symbol) => {
           if (lastname.includes(symbol)) {
             validLastname = false;
             lastnameErrorMessage.innerHTML = errorMessages[2];
             ShowElements(lastnameErrorMessage, lastnameErrorAlert);
           }
-        }),
-      ];
+        });
+      }
 
-    // Validación a false del input Apellido
-    if (lastname == "") {
-      validLastname = false;
-      ShowElements(lastnameErrorMessage, lastnameErrorAlert);
-      lastnameErrorMessage.innerHTML = errorMessages[0];
-    }
-    if (lastname[0] == " " || lastname[lastname.length - 1] == " ") {
-      validLastname = false;
-      ShowElements(lastnameErrorMessage, lastnameErrorAlert);
-      lastnameErrorMessage.innerHTML = errorMessages[1];
-    }
-  });
+      // Validación a false del input Apellido
+      if (lastname == "") {
+        validLastname = false;
+        ShowElements(lastnameErrorMessage, lastnameErrorAlert);
+        lastnameErrorMessage.innerHTML = errorMessages[0];
+      }
+      if (lastname[0] == " " || lastname[lastname.length - 1] == " ") {
+        validLastname = false;
+        ShowElements(lastnameErrorMessage, lastnameErrorAlert);
+        lastnameErrorMessage.innerHTML = errorMessages[1];
+      }
+      checkTrueValidation();
+      checkFalseValidation();
+    });
 
-  registerFormUsername.addEventListener("keyup", () => {
+    registerFormUsername.addEventListener("keyup", () => {
+      username = registerFormUsername.value;
 
-    username = registerFormUsername.value;
+      let atSign = username.lastIndexOf("@"); // Obtiene la posición del @ en el email del usuario
+      let emailProvider = username.slice(atSign); // Obtiene el proveedor de email, ej test@gmail.com devuelve @gmail.com.
+      let emailName = username.slice(0, atSign); // Obtiene el nombre del nombre en el email, siguiendo el ejemplo anterior devuelve test
 
+      if (emailName != "") {
+        validUsername = true;
+        HideElements(usernameErrorAlert, usernameErrorMessage);
+      }
 
-    let atSign = username.lastIndexOf("@"); // Obtiene la posición del @ en el email del usuario
-    let emailProvider = username.slice(atSign); // Obtiene el proveedor de email, ej test@gmail.com devuelve @gmail.com.
-    let emailName = username.slice(0, atSign); // Obtiene el nombre del nombre en el email, siguiendo el ejemplo anterior devuelve test
+      // Validación a true del provedor de Email
+      if (
+        (emailProvider == "@gmail.com" && emailName != " ") ||
+        emailProvider == "@yahoo.com" ||
+        emailProvider == "@outlook.com"
+      ) {
+        validProvider = true;
+        HideElements(usernameErrorAlert, usernameErrorMessage);
+      }
 
-    if (emailName != "") {
-      validUsername = true;
-      HideElements(usernameErrorAlert, usernameErrorMessage);
-    }
+      // Validación a false del provedor de Email
+      if (
+        emailProvider != "@gmail.com" &&
+        emailProvider != "@yahoo.com" &&
+        emailProvider != "@outlook.com"
+      ) {
+        validProvider = false;
+        ShowElements(usernameErrorMessage, usernameErrorAlert);
+        usernameErrorMessage.innerHTML =
+          "Para registrarte debes usar un email de Gmail, Outlook o Yahoo!";
+      }
 
-    // Validación a true del provedor de Email
-    if (
-      (emailProvider == "@gmail.com" && emailName != " ") ||
-      emailProvider == "@yahoo.com" ||
-      emailProvider == "@outlook.com"
-    ) {
-      validProvider = true;
-      HideElements(usernameErrorAlert, usernameErrorMessage);
-    }
+      // Validación a false del nombre en el Email
 
-    // Validación a false del provedor de Email
-  if (
-    emailProvider != "@gmail.com" &&
-    emailProvider != "@yahoo.com" &&
-    emailProvider != "@outlook.com"
-  ) {
-    validProvider = false;
-    ShowElements(usernameErrorMessage, usernameErrorAlert);
-    usernameErrorMessage.innerHTML =
-      "Para registrarte debes usar un email de Gmail, Outlook o Yahoo!";
-  }
+      if (username == "") {
+        validUsername = false;
+        ShowElements(usernameErrorMessage, usernameErrorAlert);
+        usernameErrorMessage.innerHTML = errorMessages[0];
+      }
 
-  // Validación a false del nombre en el Email
+      if (emailName == "" && username.includes("@")) {
+        validUsername = false;
+        ShowElements(usernameErrorMessage, usernameErrorAlert);
+        usernameErrorMessage.innerHTML =
+          "El campo email debe contener un nombre antes del @";
+      }
 
-  if (username == "") {
-    validUsername = false;
-    ShowElements(usernameErrorMessage, usernameErrorAlert);
-    usernameErrorMessage.innerHTML = errorMessages[0];
-  }
+      if (username[0] == " " || username[username.length - 1] == " ") {
+        validUsername = false;
+        ShowElements(usernameErrorMessage, usernameErrorAlert);
+        usernameErrorMessage.innerHTML = errorMessages[1];
+      }
 
-  if (emailName == "" && username.includes("@")) {
-    validUsername = false;
-    ShowElements(usernameErrorMessage, usernameErrorAlert);
-    usernameErrorMessage.innerHTML =
-      "El campo email debe contener un nombre antes del @";
-  }
+      checkTrueValidation();
+      checkFalseValidation();
 
-  if (username[0] == " " || username[username.length - 1] == " ") {
-    validUsername = false;
-    ShowElements(usernameErrorMessage, usernameErrorAlert);
-    usernameErrorMessage.innerHTML = errorMessages[1];
-  }
+    });
 
-  });
+    registerFormPassword.addEventListener("keyup", () => {
+      // Validación a true de la contraseña
+      password = registerFormPassword.value;
 
-  registerFormPassword.addEventListener("keyup", () => {
-  // Validación a true de la contraseña
-  password = registerFormPassword.value;
+      if (password != "" && password.length >= 8) {
+        validPassword = true;
+        HideElements(passwordErrorAlert, passwordErrorMessage);
+      }
 
-  if (password != "" && password.length >= 8) {
-    validPassword = true;
-    HideElements(passwordErrorAlert, passwordErrorMessage);
-  }
+      // Validación a false del input Contraseña
 
-    // Validación a false del input Contraseña
-
-    if (
+      if (
         password.includes(1) == false &&
         password.includes(2) == false &&
         password.includes(3) == false &&
@@ -269,7 +286,7 @@ if (registerFormButton) {
           "La contraseña debe contener al menos 1 número";
         ShowElements(passwordErrorMessage, passwordErrorAlert);
       }
-    
+
       if (password == "") {
         validPassword = false;
         ShowElements(passwordErrorMessage, passwordErrorAlert);
@@ -286,7 +303,7 @@ if (registerFormButton) {
         ShowElements(passwordErrorMessage, passwordErrorAlert);
         passwordErrorMessage.innerHTML = errorMessages[1];
       }
-    
+
       if (
         password.includes("password") == true ||
         password.includes("Password") == true
@@ -306,35 +323,23 @@ if (registerFormButton) {
         ShowElements(passwordErrorMessage, passwordErrorAlert);
       }
 
-  })
+      checkTrueValidation();
+      checkFalseValidation();
+    });
 
-  registerFormRepeatedPassword.addEventListener("keyup", () => {
-    repeatedPassword = registerFormRepeatedPassword.value;
+    registerFormRepeatedPassword.addEventListener("keyup", () => {
+      repeatedPassword = registerFormRepeatedPassword.value;
 
-
-    if (repeatedPassword != "" && password == repeatedPassword) {
+      if (repeatedPassword != "" && password == repeatedPassword) {
         validRepeatedPassword = true;
         HideElements(repeatedPasswordErrorAlert, repeatedPasswordErrorMessage);
-      }
-    
-      // Se verifica que todas las variables estén en true para desbloquear el botón Crear cuenta
-    
-      if (
-        validName &&
-        validLastname &&
-        validUsername &&
-        validProvider &&
-        validPassword &&
-        validRepeatedPassword
-      ) {
-        enableRegisterFormButton();
       }
       if (repeatedPassword != password) {
         validRepeatedPassword = false;
         repeatedPasswordErrorMessage.innerHTML = "Las contraseñas no coinciden";
         ShowElements(repeatedPasswordErrorMessage, repeatedPasswordErrorAlert);
       }
-    
+
       if (repeatedPassword == "") {
         validRepeatedPassword = false;
         repeatedPasswordErrorMessage.innerHTML = errorMessages[0];
@@ -349,17 +354,9 @@ if (registerFormButton) {
         ShowElements(repeatedPasswordErrorMessage, repeatedPasswordErrorAlert);
       }
 
-  })
+      checkTrueValidation();
+      checkFalseValidation();
+    });
 
-
-  if (
-    !validName ||
-    !validLastname ||
-    !validUsername ||
-    !validProvider ||
-    !validPassword ||
-    !validRepeatedPassword
-  ) {
-    disabledRegisterFormButton();
-  }
+  
 }
