@@ -32,14 +32,21 @@ if (cartContainer) {
     cartList.innerHTML = cart;
   });
 
-  function incrementProduct() {
+  function incrementProduct(id, quantity) {
+    /*     let incCount = document.querySelector(".total-qty");
+    let count = 0;
+    incCount.innerHTML = 0;
+    count++;
+    incCount.innerHTML = count; */
+
+    updateQuantity(id, quantity);
     window.location.reload();
-    console.log("INCREMENT");
   }
   function decrementProduct() {
     console.log("DECREMENTT");
   }
-  function deleteProduct() {
+  function deleteProduct(id) {
+    console.log(id);
     console.log("DEleteee");
   }
 
@@ -61,11 +68,17 @@ if (cartContainer) {
         <div class="product-title"><p>${product.title}</p></div>
         <div class="cart-actions">
           <div>
-            <button class="section-product-remove__button" onclick="deleteProduct()">Quitar</button>
+            <button class="section-product-remove__button" onclick="deleteProduct(${
+              product.id
+            })">Quitar</button>
             <div class="qty-selector">
-              <button class="qty-selector-btn-decrement" onclick="decrementProduct()">-</button>
+              <button class="qty-selector-btn-decrement" onclick="decrementProduct(${
+                (product.id, product.quantity)
+              })">-</button>
               <div class="total-qty">${product.quantity}</div>
-              <button class="qty-selector-btn-increment" onclick="incrementProduct()">+</button>
+              <button class="qty-selector-btn-increment" onclick="incrementProduct(${
+                product.id
+              }, ${product.quantity})">+</button>
             </div>
           </div>
           <span class="product-price">${product.price}</span>
@@ -89,5 +102,22 @@ if (cartContainer) {
     let result = await totalProducts.json();
     console.log("Products:", result);
     return result;
+  }
+
+  async function updateQuantity(id, quantity) {
+    let updatedProduct = await fetch(`http://localhost:5000/api/cart`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: 0,
+        product: {
+          id: id,
+          quantity: quantity + 1,
+        },
+      }),
+    });
+    console.log(updatedProduct);
   }
 }
