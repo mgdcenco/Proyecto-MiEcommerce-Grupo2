@@ -55,10 +55,16 @@
   bottom: 214px;
 }
 
-.password-error-alert{
+.name-error-alert,
+.lastname-error-alert,
+.username-error-alert,
+.password-error-alert,
+.repeated-password-error-alert{
   position: absolute;
   margin-top: 8px;
   margin-left: 5px;
+  color: var(--rojo-transparente);
+  display: none;
 }
 
 .heading {
