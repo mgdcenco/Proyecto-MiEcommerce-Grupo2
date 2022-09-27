@@ -21,7 +21,7 @@ profileBtn.forEach((prop) => {
   });
 });
 
-document.addEventListener("mouseup", (event) => {
+document.addEventListener("click", (event) => {
   if (
     event.target.parentNode !== dropDown &&
     event.target.parentNode !== dropDownList &&
