@@ -125,6 +125,36 @@ button[type="submit"] {
   }
 }
 
+/* Clase de login/register navbar */
+.navbar-div-log-reg{
+  display: flex;
+  gap: 2px;
+  height: 80%;
+  min-width: 113px;
+}
+.navbar-div-log-reg > a{
+  color: var(--gris-claro);
+  font-size: 0.8rem;
+  text-decoration: none;
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+.navbar-div-log-reg > a:first-child::after{
+  content: "";
+  width: 1px;
+  height: 78%;
+  position: absolute;
+  right: 2px;
+  background-color: var(--gris-claro);
+}
+.navbar-div-log-reg > a:hover, .navbar-div-log-reg > a:active{
+  color: var(--gris-oscuro);
+}
+/*Termina clase de login/register navbar*/
 @media screen and (max-width: 360px) {
   .search-input::placeholder {
     color: transparent;
@@ -139,6 +169,22 @@ button[type="submit"] {
   .logo-desktop {
     display: block;
     cursor: pointer;
+  }
+  
+  .navbar-user-logo{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    width: 78px;
+    background-color: #494f51;
+    border-radius: 15px;
+  }
+
+  .navbar-user-logo > span{
+    color: #fff;
+    font-size: 12px;
   }
 
   .search-form {

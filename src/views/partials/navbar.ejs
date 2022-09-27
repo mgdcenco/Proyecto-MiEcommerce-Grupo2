@@ -26,22 +26,29 @@
         <img src="/img/magnify.svg" alt="" />
       </button>
     </form>
-    <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
+    <a href="/cart" id="cart-button-navbar"><img src="/img/Cart.svg" alt="Cart Button" /></a>
     <div class="profile-btn--container">
       <img
         src="/img/ProfileBtn.svg"
         class="logo-mobile profileBtn"
         alt="Profile Button"
       />
-      <img
+      <!-- <img
         src="/img/ProfileBtnBg.svg"
         class="logo-desktop profileBtn"
         alt="Profile Button"
-      />
+      /> -->
+      <div class="navbar-user-logo logo-desktop profileBtn">
+        <img
+        src="/img/ProfileBtn.svg"
+        alt="Profile Button"
+        />
+        <span id="user-name-navbar"></span>
+      </div>
       <div class="navbar-drop-down" id="dropDown">
         <div class="profile-card">
           <img src="/img/ProfileBtn.svg" alt="profile-pic" />
-          <p>Olivia</p>
+          <p id="user-name-drop-down"></p>
         </div>
         <hr />
         <ul id="dropDownList">
@@ -52,11 +59,13 @@
         </ul>
         <hr />
         <div class="navbar-theme--button">
-          <button class="dark-mode-btn">
-            <i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro
-          </button>
+          <button><i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro</button>
         </div>
       </div>
+    </div>
+    <div class="navbar-div-log-reg">
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
     </div>
   </nav>
 </header>
