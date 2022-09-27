@@ -27,16 +27,37 @@
       </button>
     </form>
     <a href="/cart"><img src="/img/Cart.svg" alt="Cart Button" /></a>
-    <img
-      src="/img/ProfileBtn.svg"
-      class="logo-mobile profileBtn"
-      alt="Profile Button"
-    />
-    <img
-      src="/img/ProfileBtnBg.svg"
-      class="logo-desktop profileBtn"
-      alt="Profile Button"
-    />
+    <div class="profile-btn--container">
+      <img
+        src="/img/ProfileBtn.svg"
+        class="logo-mobile profileBtn"
+        alt="Profile Button"
+      />
+      <img
+        src="/img/ProfileBtnBg.svg"
+        class="logo-desktop profileBtn"
+        alt="Profile Button"
+      />
+      <div class="navbar-drop-down" id="dropDown">
+        <div class="profile-card">
+          <img src="/img/ProfileBtn.svg" alt="profile-pic" />
+          <p>Olivia</p>
+        </div>
+        <hr />
+        <ul id="dropDownList">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Registro</a></li>
+          <li><a href="/historial">Historial</a></li>
+        </ul>
+        <hr />
+        <div class="navbar-theme--button">
+          <button class="dark-mode-btn">
+            <i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro
+          </button>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>
 <% } %>

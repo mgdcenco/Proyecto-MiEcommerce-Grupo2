@@ -7,6 +7,10 @@
   display: flex;
 }
 
+.product-in-cart:hover {
+  box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.24);
+}
+
 .product-details {
   display: flex;
   flex-direction: column;
