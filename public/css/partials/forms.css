@@ -62,7 +62,7 @@
 .repeated-password-error-alert{
   position: absolute;
   margin-top: 8px;
-  margin-left: 5px;
+  margin-left: -26px;
   color: var(--rojo-transparente);
   display: none;
 }
