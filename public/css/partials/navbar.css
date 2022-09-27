@@ -58,11 +58,19 @@ button[type="submit"] {
   z-index: 1000;
   border-radius: 16px;
   animation-name: slide-down;
-  animation-duration: 0.5s;
-  animation-name: fade-in-2;
+  animation-name: 1s;
   top: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   overflow: hidden;
+}
+
+@keyframes slide-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: 220px;
+  }
 }
 
 .navbar-drop-down button i {
@@ -81,6 +89,8 @@ button[type="submit"] {
 
 .navbar-drop-down ul {
   list-style: none;
+  animation-duration: 0.5s;
+  animation-name: fade-in-2;
 }
 
 .navbar-drop-down li {
@@ -115,15 +125,6 @@ button[type="submit"] {
   }
 }
 
-@keyframes slide-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: 220px;
-  }
-}
-
 @media screen and (max-width: 360px) {
   .search-input::placeholder {
     color: transparent;
@@ -146,6 +147,10 @@ button[type="submit"] {
 
   .profile-btn--container {
     position: relative;
+  }
+  .profile-card {
+    animation-duration: 0.5s;
+    animation-name: fade-in-2;
   }
 }
 
