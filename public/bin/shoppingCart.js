@@ -32,18 +32,19 @@ if (cartContainer) {
     cartList.innerHTML = cart;
   });
 
-  function incrementProduct(id, quantity) {
-    /*     let incCount = document.querySelector(".total-qty");
-    let count = 0;
-    incCount.innerHTML = 0;
-    count++;
-    incCount.innerHTML = count; */
-
-    updateQuantity(id, quantity);
-    window.location.reload();
+  function incrementProduct(id) {
+    let qty = document.querySelector(".total-qty");
+    let updatedQty = parseInt(qty.innerText) + 1;
+    qty.innerText = updatedQty;
+    updateQuantity(id, updatedQty);
   }
-  function decrementProduct() {
-    console.log("DECREMENTT");
+  function decrementProduct(id) {
+    let qty = document.querySelector(".total-qty");
+    if (qty.innerTex) {
+      let updatedQty = parseInt(qty.innerText) - 1;
+      qty.innerText = updatedQty;
+      updateQuantity(id, updatedQty);
+    }
   }
   function deleteProduct(id) {
     console.log(id);
@@ -73,12 +74,12 @@ if (cartContainer) {
             })">Quitar</button>
             <div class="qty-selector">
               <button class="qty-selector-btn-decrement" onclick="decrementProduct(${
-                (product.id, product.quantity)
+                product.id
               })">-</button>
               <div class="total-qty">${product.quantity}</div>
               <button class="qty-selector-btn-increment" onclick="incrementProduct(${
                 product.id
-              }, ${product.quantity})">+</button>
+              })">+</button>
             </div>
           </div>
           <span class="product-price">${product.price}</span>
@@ -114,7 +115,7 @@ if (cartContainer) {
         userId: 0,
         product: {
           id: id,
-          quantity: quantity + 1,
+          quantity: quantity,
         },
       }),
     });
