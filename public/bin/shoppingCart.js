@@ -50,8 +50,8 @@ if (cartContainer) {
     }
   }
   function deleteProduct(id) {
-    console.log(id);
-    console.log("DEleteee");
+    destroyProduct(id);
+    location.reload();
   }
 
   function renderCart(cartArray) {
@@ -123,5 +123,17 @@ if (cartContainer) {
       }),
     });
     console.log(updatedProduct);
+  }
+
+  async function destroyProduct(id, userId) {
+    let destroyProduct = await fetch(
+      `http://localhost:5000/api/cart/0/?productId=${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   }
 }
