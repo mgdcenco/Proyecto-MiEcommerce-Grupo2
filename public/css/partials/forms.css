@@ -67,6 +67,20 @@
   display: none;
 }
 
+.formRegister-error-message{
+  /* position: absolute; */
+    /* background: var(--rojo-transparente); */
+    color: rgb(255 0 0);
+    /* color: var(--blanco); */
+    font-size: 11px;
+    margin-top: 3px;
+    /* top: 0; */
+    /* left: 278px; */
+    width: 249px;
+    padding: 0 10px;
+    display: none;
+}
+
 .heading {
   width: 264px;
   height: 48px;
