@@ -33,19 +33,25 @@ if (cartContainer) {
     cartList.innerHTML = cart;
   });
 
-  function incrementProduct(id) {
+  function incrementProduct(id, price) {
     let qty = document.querySelector(".total-qty");
-    if (parseInt(qty.innerText) > 0) {
+    let productPrice = document.querySelector(".product-price");
+    if (parseInt(qty.innerText) >= 0) {
       let updatedQty = parseInt(qty.innerText) + 1;
       qty.innerText = updatedQty;
+      let updatedPrice = price * updatedQty;
+      productPrice.innerText = updatedPrice;
       updateQuantity(id, updatedQty);
     }
   }
-  function decrementProduct(id) {
+  function decrementProduct(id, price) {
     let qty = document.querySelector(".total-qty");
-    if (parseInt(qty.innerText) > 0) {
+    let productPrice = document.querySelector(".product-price");
+    if (parseInt(qty.innerText) >= 0) {
       let updatedQty = parseInt(qty.innerText) - 1;
       qty.innerText = updatedQty;
+      let updatedPrice = price * updatedQty;
+      productPrice.innerText = updatedPrice;
       updateQuantity(id, updatedQty);
     }
   }
@@ -78,11 +84,11 @@ if (cartContainer) {
             <div class="qty-selector">
               <button class="qty-selector-btn-decrement" onclick="decrementProduct(${
                 product.id
-              })">-</button>
+              }, ${product.price})">-</button>
               <div class="total-qty">${product.quantity}</div>
               <button class="qty-selector-btn-increment" onclick="incrementProduct(${
                 product.id
-              })">+</button>
+              }, ${product.price})">+</button>
             </div>
           </div>
           <span class="product-price">${product.price * product.quantity}</span>

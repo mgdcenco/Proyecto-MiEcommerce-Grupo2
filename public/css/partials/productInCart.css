@@ -48,12 +48,17 @@
   gap: 7px;
   align-items: center;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 
-.qty-selector-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+.qty-selector button {
+  height: 100%;
+  width: 100%;
+}
+.qty-selector button:hover {
+  background-color: var(--verde);
+  color: aliceblue;
+  animation: fade-in 0.5s;
 }
 .qty-selector-btn-increment {
   background: none;
