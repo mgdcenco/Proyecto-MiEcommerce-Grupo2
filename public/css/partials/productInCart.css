@@ -55,14 +55,24 @@
   overflow: hidden;
 }
 
+.qty-selector--dark-theme {
+  color: aliceblue;
+  border: 1px solid aliceblue;
+}
+
 .qty-selector button {
   height: 20px;
-    width: 20px;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 20px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.qty-selector--dark-theme button {
+  color: aliceblue;
+}
+
 .qty-selector button:hover {
   background-color: var(--verde);
   color: aliceblue;
