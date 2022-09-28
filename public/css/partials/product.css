@@ -36,9 +36,8 @@
   padding-top: 5px;
 }
 
-.main--partials-container .breadcrumb--dark-theme a:nth-child(2)::before {
-  content: url("/img/chevron-right.svg");
-  color: black;
+.main--partials-container > .breadcrumb a::before {
+  content: url("/img/arrow-left.svg");
   padding-top: 5px;
   filter: invert(100%);
 }
