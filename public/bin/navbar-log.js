@@ -6,6 +6,9 @@ let userDropdownName = document.querySelector("#user-name-drop-down");
 let userDropdownNameMobile = document.querySelector(
   "#user-name-drop-down-mobile"
 );
+
+let logout = document.querySelector("#logout");
+
 if (divNavbarCart) {
   if (localStorage.getItem("user")) {
     let userName = localStorage.getItem("user");
@@ -23,6 +26,11 @@ if (divNavbarCart) {
     userDropdownName.innerHTML = "";
     userDropdownNameMobile.innerHTML = "";
   }
+  
+  if (logout) {
+  logout.addEventListener("click", () => {
+    localStorage.clear();
+  });
 
   let cartLength = document.querySelector("#cartLenght");
 }
