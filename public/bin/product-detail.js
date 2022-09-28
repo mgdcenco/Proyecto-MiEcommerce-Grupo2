@@ -40,7 +40,7 @@ window.addEventListener("load", function (e) {
     );
     botonAgregarAlCarro.addEventListener("click", async (e) => {
       e.preventDefault();
-      let userId = localStorage.getItem("id");
+      let userId = parseInt(localStorage.getItem("id"));
       
       if (localStorage.getItem("user")) {
         try {
@@ -50,7 +50,7 @@ window.addEventListener("load", function (e) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              userId: 0,
+              userId: userId,
               product: {
                 id: parseInt(botonAgregarAlCarro.id),
                 quantity: 1,
@@ -65,7 +65,7 @@ window.location.assign("http://localhost:3000/cart");
           console.error(err);
         }
       } else {
-        alert("hola");
+        alert("No puedes añadir nada al carrito si no estás logeado");
       }
     });
   }
