@@ -1,31 +1,76 @@
 <div class="background"></div>
 <div class="pagina">
   <div class="container">
-    <form class="formRegister">
+    <form class="formRegister" id="registerForm">
       <div class="heading">
         <h2>¡Registrate!</h2>
       </div>
-
+      
       <div class="inputs">
-        <label for="username"></label>
-        <input type="text" placeholder="Tu email" id="username" />
-
-        <label for="password"></label>
+        <div class="formRegister--name-container">
+          <label for="name"></label>
+          <input type="text" placeholder="Tu nombre" id="name" />
+          <i class="fa-solid fa-circle-exclamation name-error-alert"></i>
+        <div class="formRegister--name-error-container">
+          <i class="fa-solid fa-caret-left error-alert-arrow"></i>
+          <div class="formRegister-name-container--name-error-message formRegister-error-message">
+        </div>
+        </div>
+        </div>
+        <div class="formRegister--lastname-container">
+          <label for="lastname"></label>
+          <input type="text" placeholder="Tu apellido" id="lastname" />
+          <i class="fa-solid fa-circle-exclamation lastname-error-alert"></i>
+          <div class="formRegister--lastname-error-container">
+        <i class="fa-solid fa-caret-left error-alert-arrow"></i>
+        <div class="formRegister-lastname-container--lastname-error-message formRegister-error-message">
+          </div>
+        </div>
+        </div>
+        <div class="formRegister--username-container">
+          <label for="username"></label>
+          <input type="text" placeholder="Tu email" id="username"/>
+          <i class="fa-solid fa-circle-exclamation username-error-alert"></i>
+          <div class="formRegister--username-error-container">
+        <i class="fa-solid fa-caret-left error-alert-arrow"></i>
+        <div class="formRegister-username-container--username-error-message formRegister-error-message">
+          </div>
+        </div>
+        </div>
+        <div class="formRegister--password-container">
+          <label for="password"></label>
         <input
           type="password"
           placeholder="Tu nueva contraseña"
           id="password"
         />
+        <i class="fa-solid fa-circle-exclamation password-error-alert"></i>
+        <div class="formRegister--password-error-container">
+        <i class="fa-solid fa-caret-left error-alert-arrow"></i>
 
-        <label for="password"></label>
-        <input
-          type="password"
-          placeholder="Repite tu contraseña"
-          id="passwordNew"
-        />
+        <div class="formRegister-password-container--password-error-message formRegister-error-message">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, error?
+        </div>
+        </div>
+
+        </div>
+        <div class="formRegister--repeatedPassword-container">
+          <label for="password"></label>
+          <input
+            type="password"
+            placeholder="Repite tu contraseña"
+            id="passwordRepeated"
+          />
+          <i class="fa-solid fa-circle-exclamation repeated-password-error-alert"></i>
+          <div class="formRegister--repeated-password-error-container">
+        <i class="fa-solid fa-caret-left error-alert-arrow"></i>
+        <div class="formRegister-repeated-password-container--repeated-password-error-message formRegister-error-message">
+        Lorem ipsum dolor sit amet.
+        </div>
       </div>
-
-      <button><a href="/">Crear Cuenta</a></button>
+        </div>
+      </div>
+      <button type="submit" class="formRegister--submit-button-inactive" id="registerFormButton" disabled>Crear Cuenta</button>
     </form>
   </div>
 
