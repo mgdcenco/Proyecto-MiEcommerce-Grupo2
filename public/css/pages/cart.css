@@ -13,10 +13,32 @@
 
 .cart-container a {
   text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.breadcrumb {
+  border: none;
   color: black;
   font-size: 1rem;
   display: flex;
   align-items: center;
+}
+
+.breadcrumb::before {
+  content: url("/img/arrow-left.svg");
+  padding-top: 5px;
+}
+
+.breadcrumb--dark-theme {
+  color: aliceblue;
+}
+
+.breadcrumb--dark-theme::before {
+  content: url("/img/arrow-left.svg");
+  filter: invert(100%);
 }
 
 .cart-container h1 {
@@ -27,13 +49,6 @@
   line-height: 33px;
   display: flex;
   align-items: center;
-  color: #000000;
-}
-
-.cart-container a::before {
-  content: url("/img/arrow-left.svg");
-  color: black;
-  padding-top: 5px;
 }
 
 .cart-list {

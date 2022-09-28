@@ -11,6 +11,7 @@
 @import url("./partials/productDescuento.css");
 @import url("pages/home.css");
 @import url("pages/searchResults.css");
+@import url("./partials/modal.css");
 
 :root {
   --blanco: rgba(255, 255, 255, 1);
@@ -21,6 +22,9 @@
   --verde-oscuro: #056252;
   --negro: rgba(0, 0, 0, 1);
   --rojo: rgba(255, 0, 0, 1);
+  --rojo-transparente: rgb(255 0 0 / 71%);
+  --dark-mode-body: rgba(34, 34, 34);
+  --dark-mode-cards: rgba(51, 51, 51);
   --header1: 40px;
   --header2: 32px;
   --header3: 24px;
@@ -45,4 +49,9 @@ main {
   max-width: 1024px;
   width: 90%;
   margin-top: 80px;
+}
+
+.dark-mode--body {
+  background-color: var(--dark-mode-body);
+  color: white;
 }

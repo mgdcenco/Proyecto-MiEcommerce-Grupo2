@@ -6,18 +6,13 @@
       <div class="cart-containerWrapper-partials">
         <%- include('../partials/navbar', noSearchBox) %>
         <main class="cart-container">
-          <a class="breadcrumb" href="/">Volver</a>
+          <a class="breadcrumb" onclick="history.back()">Volver</a>
           <h1>Productos en tu carrito</h1>
-          <div class="cart-list">
-            <% products.map((product)=>{%> <%-
-            include("../partials/productInCart.ejs", {product})%> <% }) %>
-          </div>
+          <div class="cart-list"></div>
 
           <div class="cart-total-container">
             <p>Total de Puntos</p>
-            <span class="total-price"
-              ><%= products.reduce((total, product)=>total+product.price, 0) %>
-            </span>
+            <span class="total-price"></span>
           </div>
           <div class="button-container">
             <form action="/checkout" method="get">
@@ -25,6 +20,24 @@
             </form>
           </div>
         </main>
+        <div class="main--partials-container">
+          <div
+            class="product-list--cards"
+            style="
+              margin-left: auto;
+              width: 90%;
+              margin-right: auto;
+              max-width: 1024px;
+              margin-bottom: 5rem;
+            "
+          >
+            <div class="product-list--h">
+              <h3>Los más pedidos</h3>
+            </div>
+            <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
+            {"product":mostPopular[i]})%> <% } %>
+          </div>
+        </div>
       </div>
       <%- include("../partials/footer.ejs")%>
     </div>

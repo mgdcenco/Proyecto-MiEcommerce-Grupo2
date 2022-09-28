@@ -23,6 +23,7 @@ body {
   font-size: 12px;
   line-height: 16px;
   margin-left: 40px;
+  margin-top: 10px;
 }
 
 .side-bar ul {
@@ -31,7 +32,7 @@ body {
 }
 
 .side-bar li {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .side-bar a {
@@ -40,6 +41,14 @@ body {
   font-size: 12px;
   line-height: 16px;
   color: black;
+}
+
+.side-bar--dark-theme {
+  background: rgb(74, 79, 81);
+}
+.side-bar--dark-theme a,
+.side-bar--dark-theme button {
+  color: aliceblue;
 }
 
 @keyframes slide-in {
@@ -80,7 +89,6 @@ body {
 }
 
 .profile-card p {
-  color: black;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

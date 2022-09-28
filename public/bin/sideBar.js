@@ -3,6 +3,7 @@ const sideBar = document.querySelector("#sideBar");
 const dropDown = document.querySelector("#dropDown");
 const dropDownList = document.querySelector("#dropDownList");
 const themeButton = document.querySelector(".navbar-theme--button");
+const profileBtnContainer = document.querySelector(".profile-btn--container");
 const darkBg = document.querySelector("#darkBg");
 
 profileBtn.forEach((prop) => {
@@ -20,11 +21,13 @@ profileBtn.forEach((prop) => {
   });
 });
 
-document.addEventListener("mouseup", (event) => {
+document.addEventListener("click", (event) => {
   if (
     event.target.parentNode !== dropDown &&
     event.target.parentNode !== dropDownList &&
-    event.target.parentNode !== themeButton
+    event.target.parentNode !== themeButton &&
+    event.target.parentNode !== profileBtnContainer &&
+    dropDown
   ) {
     dropDown.style.display = "none";
   }

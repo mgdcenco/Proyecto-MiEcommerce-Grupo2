@@ -1,13 +1,72 @@
-const primaryImage = document.querySelector(".section-product-detail__images-primary");
+const primaryImage = document.querySelector(
+  ".section-product-detail__images-primary"
+);
 
-if(primaryImage){
-    const collectionImages = document.querySelectorAll(".section-product-detail__images-collection-img");
+window.addEventListener("load", function (e) {
+  if (primaryImage) {
+    //array de imagenes
+    const collectionImagesAll = document.querySelector(
+      ".section-product-detail__images-collection"
+    );
+    //el div que contiene las imagenes
+    const collectionImages = document.querySelectorAll(
+      ".section-product-detail__images-collection-img"
+    );
 
+    let primaryImageConst = primaryImage.src;
+    collectionImages[0].classList.add("image-product-active");
+    collectionImages.forEach((elem, index) => {
+      elem.addEventListener("mouseover", () => {
+        primaryImage.src = elem.src;
+      });
+      //evento mouseleave al div padre de las imagenes, ya que al dejarla en la imagen hija, entre imagen e imagen ,se va a notar la imagen principal. De esta forma se ve mejor
+      collectionImagesAll.addEventListener("mouseleave", () => {
+        primaryImage.src = primaryImageConst;
+      });
+      elem.addEventListener("click", () => {
+        primaryImageConst = elem.src;
+        primaryImage.src = elem.src;
+        elem.classList.add("image-product-active");
+        for (let i = 0; i < collectionImages.length; i++) {
+          if (i !== index) {
+            collectionImages[i].classList.remove("image-product-active");
+          }
+        }
+      });
+    });
 
-    collectionImages.forEach((elem) => {
-        elem.addEventListener("mouseover", ()=>{
-            primaryImage.src = elem.src;
-        })
-    })
+    let botonAgregarAlCarro = document.querySelector(
+      ".section-product-detail__button-on-cart"
+    );
+    botonAgregarAlCarro.addEventListener("click", async (e) => {
+      e.preventDefault();
+      let userId = parseInt(localStorage.getItem("id"));
 
-}
+      if (localStorage.getItem("user")) {
+        try {
+          let post = await fetch(`http://localhost:5000/api/cart`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userId: userId,
+              product: {
+                id: parseInt(botonAgregarAlCarro.id),
+                quantity: 1,
+              },
+            }),
+          });
+
+          let result = await post.json();
+          console.log(result);
+          window.location.assign("http://localhost:3000/cart");
+        } catch (err) {
+          console.error(err);
+        }
+      } else {
+        alert("No puedes añadir nada al carrito si no estás logeado");
+      }
+    });
+  }
+});

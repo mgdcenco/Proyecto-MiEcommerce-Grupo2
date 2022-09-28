@@ -2,15 +2,17 @@
 <div class="side-bar" id="sideBar">
   <div class="profile-card">
     <img src="/img/ProfileBtn.svg" alt="profile-pic" />
-    <p>Olivia</p>
+    <p id="user-name-drop-down-mobile"></p>
   </div>
   <hr />
   <ul>
     <li><a href="/">Inicio</a></li>
-    <li><a href="/login">Login</a></li>
     <li><a href="/register">Registro</a></li>
     <li><a href="/historial">Historial</a></li>
+    <li><a class="logout" href="/">Logout</a></li>
   </ul>
   <hr />
-  <button>Cambiar a Tema Oscuro</button>
+  <button onclick="darkTheme()" class="dark-mode-btn">
+    Cambiar a Tema Oscuro
+  </button>
 </div>
