@@ -1,5 +1,9 @@
 const profileBtn = document.querySelectorAll(".profileBtn");
 const sideBar = document.querySelector("#sideBar");
+const dropDown = document.querySelector("#dropDown");
+const dropDownList = document.querySelector("#dropDownList");
+const themeButton = document.querySelector(".navbar-theme--button");
+const profileBtnContainer = document.querySelector(".profile-btn--container");
 const darkBg = document.querySelector("#darkBg");
 
 profileBtn.forEach((prop) => {
@@ -11,12 +15,24 @@ profileBtn.forEach((prop) => {
     sideBar.style.display === "block"
       ? (sideBar.style.display = "none")
       : (sideBar.style.display = "block");
-  })
+    dropDown.style.display === "block"
+      ? (dropDown.style.display = "none")
+      : (dropDown.style.display = "block");
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    event.target.parentNode !== dropDown &&
+    event.target.parentNode !== dropDownList &&
+    event.target.parentNode !== themeButton &&
+    event.target.parentNode !== profileBtnContainer
+  ) {
+    dropDown.style.display = "none";
+  }
 });
 
 darkBg.addEventListener("click", () => {
   sideBar.style.display = "none";
   darkBg.style.display = "none";
 });
-
-

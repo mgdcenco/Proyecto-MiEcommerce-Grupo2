@@ -86,3 +86,11 @@ body {
   font-size: 12px;
   line-height: 16px;
 }
+
+@media screen and (min-width: 769px) {
+  .side-bar,
+  .dark-bg {
+    visibility: hidden;
+    position: absolute;
+  }
+}
