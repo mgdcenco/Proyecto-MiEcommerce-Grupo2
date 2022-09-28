@@ -15,12 +15,14 @@ const loginForm = document.querySelector('#loginForm');
             }
         })
 
-        const resultadoJson = await resultado.json();
-
-        if (resultadoJson.status !== 400) {
+        const resultadoJson = await resultado.json();   
+        debugger
+        if (!resultadoJson.error) {
             localStorage.setItem('user', resultadoJson.name)
             localStorage.setItem('id', resultadoJson.id)
             window.location.replace('http://localhost:3000/')
+        }else{
+            alert("error")
         }
 
     })
