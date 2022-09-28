@@ -17,7 +17,7 @@ if (registerFormButton) {
     let password;
     let passwordRepeated ;
 
-  registerForm.addEventListener("keyup", () => {
+  registerForm.addEventListener("keyup", (e) => {
 
     name = registerFormName.value;
     lastname = registerFormLastname.value;
@@ -50,7 +50,7 @@ if (registerFormButton) {
         passwordRepeatedLength = e.target.value.length
     }
 
-    if (usernameLength != 0 && passwordLength != 0 && passwordRepeatedLength != 0) {
+    if (username.length != 0 && password.length != 0 && passwordRepeated.length != 0) {
         registerFormButton.removeAttribute("disabled");
         registerFormButton.classList.remove("formRegister--submit-button-inactive");
         registerFormButton.classList.add("formRegister--submit-button-active");
