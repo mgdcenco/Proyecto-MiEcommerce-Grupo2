@@ -41,7 +41,7 @@ window.addEventListener("load", function (e) {
     botonAgregarAlCarro.addEventListener("click", async (e) => {
       e.preventDefault();
       let userId = parseInt(localStorage.getItem("id"));
-      
+
       if (localStorage.getItem("user")) {
         try {
           let post = await fetch(`http://localhost:5000/api/cart`, {
@@ -60,7 +60,7 @@ window.addEventListener("load", function (e) {
 
           let result = await post.json();
           console.log(result);
-window.location.assign("http://localhost:3000/cart");
+          window.location.assign("http://localhost:3000/cart");
         } catch (err) {
           console.error(err);
         }

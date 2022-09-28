@@ -17,7 +17,7 @@ if (cartContainer) {
       let cartArray = [];
       let lengthCart = promesas[1].length;
       localStorage.setItem("cartLength", lengthCart);
-      if(lengthCart>0){
+      if (lengthCart > 0) {
         for (let i = 0; i < getProductsResult.length; i++) {
           for (let j = 0; j < getUserCartResult.length; j++) {
             if (getProductsResult[i].id === getUserCartResult[j].id) {
@@ -32,8 +32,8 @@ if (cartContainer) {
         let cart = renderCart(cartArray, userId);
         cartList.innerHTML = cart;
         calculateTotalPrice();
-      }else{
-        mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">No tienes ningun producto en el carrito! Agrega el producto que buscas desde nuestra <a href='http://localhost:3000/' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Pagina Principal</a></p>`;
+      } else {
+        mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">No tienes ningun producto en el carrito! Agrega el producto que buscas desde nuestra <a href='http://localhost:3000/' style='display: inline-block; text-decoration:none; color: var(--verde); font-size:20px;'>Pagina Principal</a></p><div style="display:flex; align-items:center; justify-content:center; margin-top:5rem;"><i style='font-size: 15rem; color: var(--verde)' class="fa-solid fa-cart-shopping"></i></div>`;
       }
     });
 
@@ -66,11 +66,10 @@ if (cartContainer) {
       calculateTotalPrice();
       let lengthCart = localStorage.getItem("cartLength");
       localStorage.setItem("cartLength", lengthCart - 1);
-      if(lengthCart <= 1){
+      if (lengthCart <= 1) {
         mainCart.innerHTML = `<div style="width:80%; margin-right: auto; margin-left:auto;"><h3 style="font-size:24px; margin-bottom: 10px;">Ya no posee productos en su carrito.</h3>
         <p>Seguramente pueda conseguir lo que busca en algunos de nuestros productos!</p>
-        <p>Dirigase a la <a href="/" style="display:inline-block; color:blue; text-decoration:underline;" >Pagina Principal</a> para encontrar lo que desea</p></div>`;
-        
+        <p>Dirigase a la <a href="/" style="display:inline-block; color: var(--verde); text-decoration:none;" >Pagina Principal</a> para encontrar lo que desea</p></div> <div style="display:flex; align-items:center; justify-content:center; margin-top:5rem;"><i style='font-size: 15rem; color: var(--verde)' class="fa-solid fa-cart-shopping"></i></div>`;
       }
     }
 
@@ -169,7 +168,6 @@ if (cartContainer) {
       );
     }
   } else {
-    
     mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">Ya estás a un paso de obtener tu producto. Solo hace falta que te registres para conseguirlo!En el siguiente link podras conseguirlo: <a href='http://localhost:3000/register' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Registrarse</a></p>`;
   }
 }

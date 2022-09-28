@@ -20,6 +20,24 @@
             </form>
           </div>
         </main>
+        <div class="main--partials-container">
+          <div
+            class="product-list--cards"
+            style="
+              margin-left: auto;
+              width: 90%;
+              margin-right: auto;
+              max-width: 1024px;
+              margin-bottom: 5rem;
+            "
+          >
+            <div class="product-list--h">
+              <h3>Los más pedidos</h3>
+            </div>
+            <% for(i=0;i<=3;i++){%> <%-include("../partials/productCard.ejs",
+            {"product":mostPopular[i]})%> <% } %>
+          </div>
+        </div>
       </div>
       <%- include("../partials/footer.ejs")%>
     </div>
