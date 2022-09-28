@@ -211,6 +211,7 @@ input[type="password"] {
   background: var(--verde);
   transition-duration: 0.2s;
 }
+
 .formLogin button:active,
 .formRegister--submit-button-active:active {
   background: var(--verde);

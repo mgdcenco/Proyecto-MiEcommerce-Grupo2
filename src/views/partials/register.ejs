@@ -7,9 +7,10 @@
       </div>
       
       <div class="inputs">
+
         <div class="formRegister--name-container">
           <label for="name"></label>
-          <input type="text" placeholder="Tu nombre" id="name" />
+          <input type="text" placeholder="Tu nombre" id="name" name="firstname"/>
           <i class="fa-solid fa-circle-exclamation name-error-alert"></i>
         <div class="formRegister--name-error-container">
           <i class="fa-solid fa-caret-left error-alert-arrow"></i>
@@ -19,7 +20,7 @@
         </div>
         <div class="formRegister--lastname-container">
           <label for="lastname"></label>
-          <input type="text" placeholder="Tu apellido" id="lastname" />
+          <input type="text" placeholder="Tu apellido" id="lastname" name="lastname"/>
           <i class="fa-solid fa-circle-exclamation lastname-error-alert"></i>
           <div class="formRegister--lastname-error-container">
         <i class="fa-solid fa-caret-left error-alert-arrow"></i>
@@ -29,7 +30,7 @@
         </div>
         <div class="formRegister--username-container">
           <label for="username"></label>
-          <input type="text" placeholder="Tu email" id="username"/>
+          <input type="text" placeholder="Tu email" id="username" name="email"/>
           <i class="fa-solid fa-circle-exclamation username-error-alert"></i>
           <div class="formRegister--username-error-container">
         <i class="fa-solid fa-caret-left error-alert-arrow"></i>
@@ -43,6 +44,7 @@
           type="password"
           placeholder="Tu nueva contraseña"
           id="password"
+          name="password"
         />
         <i class="fa-solid fa-circle-exclamation password-error-alert"></i>
         <div class="formRegister--password-error-container">

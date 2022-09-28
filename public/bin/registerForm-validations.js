@@ -137,7 +137,6 @@ if (registerFormButton) {
     }
   };
 
-
   registerFormName.addEventListener("keyup", () => {
     name = registerFormName.value;
 
