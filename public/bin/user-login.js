@@ -21,7 +21,7 @@ if (loginForm) {
       localStorage.setItem("id", resultadoJson.id);
       let prevUrl = document.referrer;
       prevUrl !== "http://localhost:3000/register"
-        ? history.back()
+        ? window.location.replace(prevUrl)
         : window.location.replace("http://localhost:3000/");
     } else {
       let modal = document.getElementById("partialModal");

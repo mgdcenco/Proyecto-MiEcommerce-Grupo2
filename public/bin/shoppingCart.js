@@ -42,6 +42,8 @@ if (cartContainer) {
       } else {
         if (parseInt(qty.innerText) > 1) {
           updatedQty = parseInt(qty.innerText) - 1;
+        } else if (parseInt(qty.innerText) === 1) {
+          deleteProduct(id, userId);
         } else {
           return null;
         }
