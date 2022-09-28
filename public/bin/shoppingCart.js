@@ -17,7 +17,6 @@ if (cartContainer) {
     for (let i = 0; i < getProductsResult.length; i++) {
       for (let j = 0; j < getUserCartResult.length; j++) {
         if (getProductsResult[i].id === getUserCartResult[j].id) {
-          console.log(getUserCartResult[j]);
           let product = {
             ...getProductsResult[i],
             quantity: getUserCartResult[j].quantity,
@@ -26,34 +25,30 @@ if (cartContainer) {
         }
       }
     }
-
-    console.log(cartArray);
-    localStorage.setItem("shoppingCart", JSON.stringify(cartArray));
     let cart = renderCart(cartArray);
     cartList.innerHTML = cart;
+    calculateTotalPrice();
   });
 
-  function incrementProduct(id, price) {
-    let qty = document.querySelector(".total-qty");
-    let productPrice = document.querySelector(".product-price");
-    if (parseInt(qty.innerText) >= 0) {
-      let updatedQty = parseInt(qty.innerText) + 1;
-      qty.innerText = updatedQty;
-      let updatedPrice = price * updatedQty;
-      productPrice.innerText = updatedPrice;
-      updateQuantity(id, updatedQty);
+  function updateProductQty(id, price, operation) {
+    let qty = document.querySelector(`#qty-${id}`);
+    let productPrice = document.querySelector(`#price-${id}`);
+
+    let updatedQty;
+    if (operation === "+") {
+      updatedQty = parseInt(qty.innerText) + 1;
+    } else {
+      if (parseInt(qty.innerText) > 1) {
+        updatedQty = parseInt(qty.innerText) - 1;
+      } else {
+        return null;
+      }
     }
-  }
-  function decrementProduct(id, price) {
-    let qty = document.querySelector(".total-qty");
-    let productPrice = document.querySelector(".product-price");
-    if (parseInt(qty.innerText) >= 0) {
-      let updatedQty = parseInt(qty.innerText) - 1;
-      qty.innerText = updatedQty;
-      let updatedPrice = price * updatedQty;
-      productPrice.innerText = updatedPrice;
-      updateQuantity(id, updatedQty);
-    }
+    qty.innerText = updatedQty;
+    let updatedPrice = price * updatedQty;
+    productPrice.innerText = updatedPrice;
+    updateQuantity(id, updatedQty);
+    calculateTotalPrice();
   }
   function deleteProduct(id) {
     destroyProduct(id);
@@ -82,16 +77,20 @@ if (cartContainer) {
               product.id
             })">Quitar</button>
             <div class="qty-selector">
-              <button class="qty-selector-btn-decrement" onclick="decrementProduct(${
+              <button class="qty-selector-btn-decrement" onclick="updateProductQty(${
                 product.id
-              }, ${product.price})">-</button>
-              <div class="total-qty">${product.quantity}</div>
-              <button class="qty-selector-btn-increment" onclick="incrementProduct(${
+              }, ${product.price}, ${"'-'"})">-</button>
+              <div class="total-qty" id="qty-${product.id}">${
+          product.quantity
+        }</div>
+              <button class="qty-selector-btn-increment" onclick="updateProductQty(${
                 product.id
-              }, ${product.price})">+</button>
+              }, ${product.price}, ${"'+'"})">+</button>
             </div>
           </div>
-          <span class="product-price">${product.price * product.quantity}</span>
+          <span class="product-price" id="price-${product.id}">${
+          product.price * product.quantity
+        }</span>
         </div>
       </div>
     </article>
@@ -101,16 +100,9 @@ if (cartContainer) {
     return productCart;
   }
 
-  async function getUserCart(id) {
-    let loggedUser = await fetch(`http://localhost:5000/api/cart/${id}`);
-    let result = await loggedUser.json();
-    return result;
-  }
-
   async function getProducts() {
     let totalProducts = await fetch(`http://localhost:5000/api/product`);
     let result = await totalProducts.json();
-    console.log("Products:", result);
     return result;
   }
 
@@ -128,7 +120,6 @@ if (cartContainer) {
         },
       }),
     });
-    console.log(updatedProduct);
   }
 
   async function destroyProduct(id, userId) {
@@ -142,4 +133,19 @@ if (cartContainer) {
       }
     );
   }
+
+  function calculateTotalPrice() {
+    let productPriceArray = document.querySelectorAll(".product-price");
+    let totalPrice = document.querySelector(".total-price");
+    totalPrice.innerText = [...productPriceArray].reduce(
+      (acc, elem) => acc + parseInt(elem.innerText),
+      0
+    );
+  }
+}
+
+async function getUserCart(id) {
+  let loggedUser = await fetch(`http://localhost:5000/api/cart/${id}`);
+  let result = await loggedUser.json();
+  return result;
 }
