@@ -7,7 +7,7 @@ let userDropdownNameMobile = document.querySelector(
   "#user-name-drop-down-mobile"
 );
 
-let logout = document.querySelector("#logout");
+let logout = document.querySelectorAll(".logout");
 
 if (divNavbarCart) {
   if (localStorage.getItem("user")) {
@@ -28,9 +28,13 @@ if (divNavbarCart) {
   }
 
   if (logout) {
-    logout.addEventListener("click", () => {
-      localStorage.clear();
-    });
+    logout.forEach(elem =>{
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.replace('http://localhost:3000/login')
+      });
+    })
 
     let cartLength = document.querySelector("#cartLenght");
   }

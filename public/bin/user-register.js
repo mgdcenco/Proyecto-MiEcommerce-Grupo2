@@ -32,9 +32,10 @@ if (userRegisterForm) {
     };
 
     for (const users of respuesta) {
-      data.email == users.email
-        ? alert("El usuario ya existe.")
-        : redirect("http://localhost:3000/login");
+        if (data.email == users.email) {
+            redirect('http://localhost:3000/login')
+        }
+
     }
   });
 }

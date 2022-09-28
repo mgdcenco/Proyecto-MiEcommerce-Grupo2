@@ -7,6 +7,7 @@ let searchInput = document.querySelector(".search-input");
 let navbar = document.querySelector(".navbar-drop-down");
 let sidebar = document.querySelector(".side-bar");
 
+
 window.addEventListener("load", function (e) {
   let theme = localStorage.getItem("Theme");
   //Chequeo el localStorage

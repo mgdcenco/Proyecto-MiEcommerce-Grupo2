@@ -40,7 +40,7 @@ nav {
   align-self: stretch;
 }
 
-button[type="submit"] {
+.search-form--search-icon {
   position: absolute;
   background: none;
   border: none;
