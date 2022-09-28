@@ -22,12 +22,14 @@
         type="text"
         placeholder="Buscar productos..."
       />
-      <button type="submit">
+      <button type="submit" class="search-form--search-icon">
         <img src="/img/magnify.svg" alt="" />
       </button>
     </form>
     <a href="/cart" id="cart-button-navbar"
-      ><img src="/img/Cart.svg" alt="Cart Button"
+
+      ><span id="cartLength"></span><img src="/img/Cart.svg" alt="Cart Button"
+
     /></a>
     <div class="profile-btn--container">
       <img
@@ -49,11 +51,13 @@
           <li><a href="/">Inicio</a></li>
           <li><a href="/register">Registro</a></li>
           <li><a href="/historial">Historial</a></li>
-          <li><a id="logout" href="">Logout</a></li>
+          <li><a id="logout" href="/">Logout</a></li>
         </ul>
         <hr />
         <div class="navbar-theme--button">
-          <button><i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro</button>
+          <button onclick="darkTheme()">
+            <i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro
+          </button>
         </div>
       </div>
     </div>
