@@ -5,6 +5,7 @@ localStorage.setItem("shoppingCart", JSON.stringify(cart));
  */
 
 if (cartContainer) {
+  const mainCart = document.querySelector(".cart-container");
   if (localStorage.getItem("user")) {
     window.addEventListener("load", async () => {
       let userId = parseInt(localStorage.getItem("id"));
@@ -16,20 +17,24 @@ if (cartContainer) {
       let cartArray = [];
       let lengthCart = promesas[1].length;
       localStorage.setItem("cartLength", lengthCart);
-      for (let i = 0; i < getProductsResult.length; i++) {
-        for (let j = 0; j < getUserCartResult.length; j++) {
-          if (getProductsResult[i].id === getUserCartResult[j].id) {
-            let product = {
-              ...getProductsResult[i],
-              quantity: getUserCartResult[j].quantity,
-            };
-            cartArray.push(product);
+      if(lengthCart>0){
+        for (let i = 0; i < getProductsResult.length; i++) {
+          for (let j = 0; j < getUserCartResult.length; j++) {
+            if (getProductsResult[i].id === getUserCartResult[j].id) {
+              let product = {
+                ...getProductsResult[i],
+                quantity: getUserCartResult[j].quantity,
+              };
+              cartArray.push(product);
+            }
           }
         }
+        let cart = renderCart(cartArray, userId);
+        cartList.innerHTML = cart;
+        calculateTotalPrice();
+      }else{
+        mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">No tienes ningun producto en el carrito! Agrega el producto que buscas desde nuestra <a href='http://localhost:3000/' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Pagina Principal</a></p>`;
       }
-      let cart = renderCart(cartArray, userId);
-      cartList.innerHTML = cart;
-      calculateTotalPrice();
     });
 
     function updateProductQty(id, price, operation, userId) {
@@ -61,6 +66,12 @@ if (cartContainer) {
       calculateTotalPrice();
       let lengthCart = localStorage.getItem("cartLength");
       localStorage.setItem("cartLength", lengthCart - 1);
+      if(lengthCart <= 1){
+        mainCart.innerHTML = `<div style="width:80%; margin-right: auto; margin-left:auto;"><h3 style="font-size:24px; margin-bottom: 10px;">Ya no posee productos en su carrito.</h3>
+        <p>Seguramente pueda conseguir lo que busca en algunos de nuestros productos!</p>
+        <p>Dirigase a la <a href="/" style="display:inline-block; color:blue; text-decoration:underline;" >Pagina Principal</a> para encontrar lo que desea</p></div>`;
+        
+      }
     }
 
     function renderCart(cartArray, userId) {
@@ -158,7 +169,7 @@ if (cartContainer) {
       );
     }
   } else {
-    let mainCart = document.querySelector(".cart-container");
+    
     mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">Ya estás a un paso de obtener tu producto. Solo hace falta que te registres para conseguirlo!En el siguiente link podras conseguirlo: <a href='http://localhost:3000/register' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Registrarse</a></p>`;
   }
 }
