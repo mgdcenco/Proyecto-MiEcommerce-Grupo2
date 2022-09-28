@@ -18,10 +18,10 @@
 }
 
 .forms-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .forms-container--partials {
@@ -49,11 +49,65 @@
   justify-content: space-evenly;
   column-gap: 10px;
   width: 320px;
-  height: 344px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   bottom: 214px;
+}
+
+.formRegister--name-error-container,
+.formRegister--lastname-error-container,
+.formRegister--username-error-container,
+.formRegister--password-error-container ,
+.formRegister--repeated-password-error-container {
+  display: none;
+}
+
+.name-error-alert,
+.lastname-error-alert,
+.username-error-alert,
+.password-error-alert,
+.repeated-password-error-alert {
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -26px;
+  color: var(--rojo-transparente);
+  display: none;
+  animation: fade-in 0.5s ease-in;
+}
+
+.formRegister-error-message {
+  position: inherit;
+  /* background: rgb(251 84 84); */
+  color: rgb(255 0 0);
+  /* color: var(--blanco); */
+  font-size: 11px;
+  margin-top: px;
+  top: 0;
+  left: 275px;
+  width: 249px;
+  padding: 5px 10px;
+  /* display: none; */
+  animation: fade-in 0.5s ease-in;
+}
+
+.formRegister--name-container,
+.formRegister--lastname-container,
+.formRegister--username-container,
+.formRegister--password-container,
+.formRegister--repeatedPassword-container {
+  position: relative;
+}
+
+.error-alert-arrow {
+  position: absolute;
+  top: 5px;
+  left: 270px;
+  color: rgb(251 84 84);
+  border: none;
+  z-index: 3;
+  display: none;
+  animation: fade-in 0.5s ease-in;
 }
 
 .heading {
@@ -62,6 +116,11 @@
   left: 79px;
   top: 170px;
   margin-bottom: 10px;
+}
+
+.formRegister .heading {
+  height: 70px;
+  margin-top: 10px;
 }
 
 .heading h2 {
@@ -88,7 +147,8 @@ input {
   bottom: 10px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   padding-left: 14px;
 }
 
@@ -111,21 +171,53 @@ input[type="text"], input[type="password"] {
   margin-bottom: 18px;
   font-family: "Open Sans";
   letter-spacing: 0.5px;
+  align-items: center;
+}
+
+.formRegister button {
+  margin: 38px 0;
+}
+
+.formRegister--submit-button-inactive {
+  opacity: 0.4;
+  animation: disabled 0.5s ease-in;
+}
+
+.formRegister--submit-button-active {
+  cursor: pointer;
+  animation: enabled 0.5s ease-in;
+}
+
+@keyframes disabled {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes enabled {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .formLogin button:hover,
-.formRegister button:hover {
+.formRegister--submit-button-active:hover {
   background: var(--verde);
   transition-duration: 0.2s;
 }
 .formLogin button:active,
-.formRegister button:active {
+.formRegister--submit-button-active:active {
   background: var(--verde);
   transition-duration: 0.2s;
 }
 
-.formLogin button a,
-.formRegister button a {
+.formLogin button a {
   height: 100%;
   width: 100%;
   font-weight: 300;
@@ -160,7 +252,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 9.5px;
-  margin-bottom: -7px;
+  align-items: center;
+  /* margin-bottom: -7px; */
 }
 
 .pagina {
@@ -170,5 +263,23 @@ a {
 @media screen and (min-width: 769px) {
   .pagina {
     height: 40vh;
+  }
+  .formRegister-error-message {
+    position: absolute;
+    background: rgb(251 84 84);
+    color: rgb(255 0 0);
+    color: var(--blanco);
+    font-size: 11px;
+    margin-top: px;
+    top: 0;
+    left: 275px;
+    width: 249px;
+    padding: 5px 10px;
+    /* display: none; */
+    animation: fade-in 0.5s ease-in;
+  }
+  .error-alert-arrow {
+    
+    display: block;
   }
 }

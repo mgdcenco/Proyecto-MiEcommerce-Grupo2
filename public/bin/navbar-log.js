@@ -6,27 +6,36 @@ let userDropdownName = document.querySelector("#user-name-drop-down");
 let userDropdownNameMobile = document.querySelector(
   "#user-name-drop-down-mobile"
 );
-let logout = document.querySelector("#logout");
 
-if (localStorage.getItem("user")) {
-  let userName = localStorage.getItem("user");
-  divRegLogUser.style.display = "none";
-  divNavbarCart.style.display = "initial";
-  divNavbarUser.style.display = "initial";
-  userNavbarName.innerHTML = userName;
-  userDropdownName.innerHTML = userName;
-  userDropdownNameMobile.innerHTML = userName;
-} else {
-  divNavbarCart.style.display = "none";
-  divNavbarUser.style.display = "none";
-  divRegLogUser.style.display = "flex";
-  userNavbarName.innerHTML = "";
-  userDropdownName.innerHTML = "";
-  userDropdownNameMobile.innerHTML = "";
-}
+let logout = document.querySelectorAll(".logout");
 
-if (logout) {
-  logout.addEventListener("click", () => {
-    localStorage.clear();
-  });
+if (divNavbarCart) {
+  if (localStorage.getItem("user")) {
+    let userName = localStorage.getItem("user");
+    divRegLogUser.style.display = "none";
+    divNavbarCart.style.display = "flex";
+    divNavbarUser.style.display = "flex";
+    userNavbarName.innerHTML = userName;
+    userDropdownName.innerHTML = userName;
+    userDropdownNameMobile.innerHTML = userName;
+  } else {
+    divNavbarCart.style.display = "none";
+    divNavbarUser.style.display = "none";
+    divRegLogUser.style.display = "flex";
+    userNavbarName.innerHTML = "";
+    userDropdownName.innerHTML = "";
+    userDropdownNameMobile.innerHTML = "";
+  }
+
+  if (logout) {
+    logout.forEach(elem =>{
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.replace('http://localhost:3000/login')
+      });
+    })
+
+    let cartLength = document.querySelector("#cartLenght");
+  }
 }

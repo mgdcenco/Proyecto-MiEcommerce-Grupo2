@@ -40,27 +40,32 @@ window.addEventListener("load", function (e) {
     );
     botonAgregarAlCarro.addEventListener("click", async (e) => {
       e.preventDefault();
-      let userId = localStorage.getItem("id");
-      try {
-        let post = await fetch(`http://localhost:5000/api/cart`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId: 0,
-            product: {
-              id: parseInt(botonAgregarAlCarro.id),
-              quantity: 1,
+      let userId = parseInt(localStorage.getItem("id"));
+      
+      if (localStorage.getItem("user")) {
+        try {
+          let post = await fetch(`http://localhost:5000/api/cart`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          }),
-        });
+            body: JSON.stringify({
+              userId: userId,
+              product: {
+                id: parseInt(botonAgregarAlCarro.id),
+                quantity: 1,
+              },
+            }),
+          });
 
-        let result = await post.json();
-        console.log(result);
-        window.location.assign("http://localhost:3000/cart");
-      } catch (err) {
-        console.error(err);
+          let result = await post.json();
+          console.log(result);
+window.location.assign("http://localhost:3000/cart");
+        } catch (err) {
+          console.error(err);
+        }
+      } else {
+        alert("No puedes añadir nada al carrito si no estás logeado");
       }
     });
   }

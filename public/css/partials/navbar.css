@@ -23,6 +23,15 @@ nav {
   height: 32px;
   padding-left: 15px;
 }
+.search-input--dark-theme {
+  background: rgb(74, 79, 81);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+}
+
+.search-input--dark-theme::placeholder {
+  color: aliceblue;
+}
 
 .search-form {
   height: 32px;
@@ -31,7 +40,7 @@ nav {
   align-self: stretch;
 }
 
-button[type="submit"] {
+.search-form--search-icon {
   position: absolute;
   background: none;
   border: none;
@@ -58,7 +67,7 @@ button[type="submit"] {
   z-index: 1000;
   border-radius: 16px;
   animation-name: slide-down;
-  animation-name: 1s;
+  animation-duration: 0.5s;
   top: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   overflow: hidden;
@@ -66,10 +75,10 @@ button[type="submit"] {
 
 @keyframes slide-down {
   from {
-    height: 0;
+    height: 0px;
   }
   to {
-    height: 220px;
+    height: 245.5px;
   }
 }
 
@@ -126,13 +135,13 @@ button[type="submit"] {
 }
 
 /* Clase de login/register navbar */
-.navbar-div-log-reg{
+.navbar-div-log-reg {
   display: flex;
   gap: 2px;
   height: 80%;
   min-width: 113px;
 }
-.navbar-div-log-reg > a{
+.navbar-div-log-reg > a {
   color: var(--gris-claro);
   font-size: 0.8rem;
   text-decoration: none;
@@ -143,7 +152,7 @@ button[type="submit"] {
   position: relative;
   height: 100%;
 }
-.navbar-div-log-reg > a:first-child::after{
+.navbar-div-log-reg > a:first-child::after {
   content: "";
   width: 1px;
   height: 78%;
@@ -151,8 +160,22 @@ button[type="submit"] {
   right: 2px;
   background-color: var(--gris-claro);
 }
-.navbar-div-log-reg > a:hover, .navbar-div-log-reg > a:active{
+.navbar-div-log-reg > a:hover,
+.navbar-div-log-reg > a:active {
   color: var(--gris-oscuro);
+}
+
+.navbar-drop-down--dark-theme {
+  background: rgb(74, 79, 81);
+  color: aliceblue;
+}
+.navbar-drop-down--dark-theme a,
+.navbar-drop-down--dark-theme button {
+  color: aliceblue;
+}
+.navbar-drop-down--dark-theme li:hover a,
+.navbar-drop-down--dark-theme button:hover {
+  color: black;
 }
 /*Termina clase de login/register navbar*/
 @media screen and (max-width: 360px) {
@@ -170,8 +193,8 @@ button[type="submit"] {
     display: block;
     cursor: pointer;
   }
-  
-  .navbar-user-logo{
+
+  .navbar-user-logo {
     cursor: pointer;
     user-select: none;
     display: flex;
@@ -182,7 +205,7 @@ button[type="submit"] {
     border-radius: 15px;
   }
 
-  .navbar-user-logo > span{
+  .navbar-user-logo > span {
     color: #fff;
     font-size: 12px;
   }
@@ -194,6 +217,7 @@ button[type="submit"] {
   .profile-btn--container {
     position: relative;
   }
+
   .profile-card {
     animation-duration: 0.5s;
     animation-name: fade-in-2;
