@@ -36,13 +36,13 @@ if (divNavbarCart) {
   }
 
   if (logout) {
-    logout.forEach(elem =>{
+    logout.forEach((elem) => {
       elem.addEventListener("click", (e) => {
         e.preventDefault();
         localStorage.clear();
-        window.location.replace('http://localhost:3000/login')
+        window.location.replace("http://localhost:3000/login");
       });
-    })
+    });
 
   }
 }

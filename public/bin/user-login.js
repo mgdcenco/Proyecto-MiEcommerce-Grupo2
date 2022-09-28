@@ -23,9 +23,16 @@ if (loginForm) {
     } else {
       let modal = document.getElementById("partialModal");
       let closeModal = document.querySelector(".section-product-modal__button");
+      let registerModal = document.querySelector(
+        ".section-product-registerModal__button"
+      );
       modal.style.display = "block";
       closeModal.addEventListener("click", function () {
         modal.style.display = "none";
+      });
+      registerModal.addEventListener("click", function () {
+        modal.style.display = "none";
+        window.location.replace("http://localhost:3000/register");
       });
       window.addEventListener("click", function (event) {
         if (event.target == modal) {
