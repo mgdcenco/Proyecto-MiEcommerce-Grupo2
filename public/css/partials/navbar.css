@@ -31,7 +31,7 @@ nav {
   align-self: stretch;
 }
 
-.search-form--search-icon {
+button[type="submit"] {
   position: absolute;
   background: none;
   border: none;
