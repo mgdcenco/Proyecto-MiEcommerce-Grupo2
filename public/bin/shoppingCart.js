@@ -14,7 +14,8 @@ if (cartContainer) {
       let getProductsResult = promesas[0];
       let getUserCartResult = promesas[1];
       let cartArray = [];
-  
+      let lengthCart = promesas[1].length;
+      localStorage.setItem("cartLength", lengthCart)
       for (let i = 0; i < getProductsResult.length; i++) {
         for (let j = 0; j < getUserCartResult.length; j++) {
           if (getProductsResult[i].id === getUserCartResult[j].id) {
@@ -138,6 +139,8 @@ if (cartContainer) {
           },
         }
       );
+      renderCart()
+
     }
   
     function calculateTotalPrice() {

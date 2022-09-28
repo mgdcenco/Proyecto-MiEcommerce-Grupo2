@@ -8,9 +8,11 @@ let userDropdownNameMobile = document.querySelector(
 );
 
 let logout = document.querySelectorAll(".logout");
+let cartLength = document.querySelector("#cartLength");
 
 if (divNavbarCart) {
   if (localStorage.getItem("user")) {
+    let cartLengthStorage = localStorage.getItem('cartLength');
     let userName = localStorage.getItem("user");
     divRegLogUser.style.display = "none";
     divNavbarCart.style.display = "flex";
@@ -18,6 +20,12 @@ if (divNavbarCart) {
     userNavbarName.innerHTML = userName;
     userDropdownName.innerHTML = userName;
     userDropdownNameMobile.innerHTML = userName;
+    if(cartLengthStorage > 0){
+      cartLength.style.display = "flex"
+      cartLength.innerHTML = `${cartLengthStorage}`
+    }else{
+      cartLength.style.display = "none"
+    }
   } else {
     divNavbarCart.style.display = "none";
     divNavbarUser.style.display = "none";
@@ -36,6 +44,5 @@ if (divNavbarCart) {
       });
     })
 
-    let cartLength = document.querySelector("#cartLenght");
   }
 }
