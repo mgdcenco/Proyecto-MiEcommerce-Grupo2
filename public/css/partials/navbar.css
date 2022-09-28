@@ -23,6 +23,15 @@ nav {
   height: 32px;
   padding-left: 15px;
 }
+.search-input--dark-theme {
+  background: rgb(74, 79, 81);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+}
+
+.search-input--dark-theme::placeholder {
+  color: aliceblue;
+}
 
 .search-form {
   height: 32px;
@@ -154,6 +163,19 @@ button[type="submit"] {
 .navbar-div-log-reg > a:hover,
 .navbar-div-log-reg > a:active {
   color: var(--gris-oscuro);
+}
+
+.navbar-drop-down--dark-theme {
+  background: rgb(74, 79, 81);
+  color: aliceblue;
+}
+.navbar-drop-down--dark-theme a,
+.navbar-drop-down--dark-theme button {
+  color: aliceblue;
+}
+.navbar-drop-down--dark-theme li:hover a,
+.navbar-drop-down--dark-theme button:hover {
+  color: black;
 }
 /*Termina clase de login/register navbar*/
 @media screen and (max-width: 360px) {

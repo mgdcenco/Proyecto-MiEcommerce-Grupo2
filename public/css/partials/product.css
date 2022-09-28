@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.main--partials-container > .breadcrumb--dark-theme a {
+  color: aliceblue;
+}
+
 .main--partials-container .breadcrumb a:nth-child(2) {
   text-transform: capitalize;
 }
@@ -22,6 +26,13 @@
   content: url("/img/chevron-right.svg");
   color: black;
   padding-top: 5px;
+}
+
+.main--partials-container .breadcrumb--dark-theme a:nth-child(2)::before {
+  content: url("/img/chevron-right.svg");
+  color: black;
+  padding-top: 5px;
+  filter: invert(100%);
 }
 
 .section-product-detail {
@@ -34,6 +45,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.section-product-detail--dark-theme {
+  background-color: var(--dark-mode-cards);
 }
 
 .section-product-detail h2 {
@@ -90,7 +105,6 @@
   font-size: 12px;
   margin-top: 24px;
   line-height: 16px;
-  color: var(--negro);
 }
 
 .section-product-detail__button {

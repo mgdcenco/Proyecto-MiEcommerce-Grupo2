@@ -56,9 +56,12 @@ if (cartContainer) {
   }
 
   function renderCart(cartArray) {
+    let theme = localStorage.getItem("Theme");
     let productCart = cartArray
       .map((product) => {
-        return `<article class="product-in-cart">
+        return `<article class= "product-in-cart ${
+          theme === "Dark" ? "product-in-cart--dark-theme" : ""
+        }">
       <div class="product-img">
         <img
           src="${
@@ -76,7 +79,9 @@ if (cartContainer) {
             <button class="section-product-remove__button" onclick="deleteProduct(${
               product.id
             })">Quitar</button>
-            <div class="qty-selector">
+            <div class="qty-selector ${
+              theme === "Dark" ? "qty-selector--dark-theme" : ""
+            }">
               <button class="qty-selector-btn-decrement" onclick="updateProductQty(${
                 product.id
               }, ${product.price}, ${"'-'"})">-</button>
