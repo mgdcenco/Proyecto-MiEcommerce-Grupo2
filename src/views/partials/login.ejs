@@ -1,10 +1,10 @@
 <div class="background"></div>
 <div class="pagina">
-  <div class="container">
-    <form class="formLogin">
-      <div class="heading">
-        <h2>¡Hola!</h2>
-      </div>
+<div class="container">
+  <form class="formLogin" id="loginForm">
+    <div class="heading">
+      <h2>¡Hola!</h2>
+    </div>
 
     <div class="inputs">
       <label for="username"></label>
@@ -14,10 +14,10 @@
       <input type="password" placeholder="Tu contraseña" id="passwordLogin" name="password" />
     </div>
 
-      <button><a href="/">Iniciar Sesión</a></button>
-    </form>
-  </div>
-  <div class="aviso">
-    <span>¿No tienes cuenta?&nbsp;<a href="/register">Regístrate</a></span>
-  </div>
+    <button type="submit" id="loginBtn" class="formRegister--submit-button-inactive" disabled>Iniciar Sesión</button>
+  </form>
+</div>
+<div class="aviso">
+  <span>¿No tienes cuenta?&nbsp;<a href="/register">Regístrate</a></span>
+</div>
 </div>
