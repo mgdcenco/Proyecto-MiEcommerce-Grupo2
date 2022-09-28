@@ -19,7 +19,10 @@ if (loginForm) {
     if (!resultadoJson.error) {
       localStorage.setItem("user", resultadoJson.name);
       localStorage.setItem("id", resultadoJson.id);
-      window.location.replace("http://localhost:3000/");
+      let prevUrl = document.referrer;
+      prevUrl !== "http://localhost:3000/register"
+        ? history.back()
+        : window.location.replace("http://localhost:3000/");
     } else {
       let modal = document.getElementById("partialModal");
       let closeModal = document.querySelector(".section-product-modal__button");
