@@ -150,7 +150,7 @@ if (cartContainer) {
     }
   }else{
     let mainCart = document.querySelector(".cart-container");
-    mainCart.innerHTML = `<p style="font-size:20px;">No ha iniciado sesión, por favor, inicie sesión para poder acceder al carrito. Vaya a la siguiente pagina: <a href='http://localhost:3000/login' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Login</a></p>`
+    mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">Ya estás a un paso de obtener tu producto. Solo hace falta que te registres para conseguirlo!En el siguiente link podras conseguirlo: <a href='http://localhost:3000/register' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Registrarse</a></p>`
   }
   
 }
