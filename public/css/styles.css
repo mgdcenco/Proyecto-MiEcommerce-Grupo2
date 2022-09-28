@@ -22,6 +22,7 @@
   --negro: rgba(0, 0, 0, 1);
   --rojo: rgba(255, 0, 0, 1);
   --rojo-transparente: rgb(255 0 0 / 71%);
+  --dark-mode-body: rgba(34, 34, 34);
   --header1: 40px;
   --header2: 32px;
   --header3: 24px;
@@ -46,4 +47,9 @@ main {
   max-width: 1024px;
   width: 90%;
   margin-top: 80px;
+}
+
+.dark-mode--body {
+  background-color: var(--dark-mode-body);
+  color: white;
 }
