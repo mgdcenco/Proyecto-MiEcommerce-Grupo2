@@ -31,7 +31,7 @@ nav {
   align-self: stretch;
 }
 
-.search-form--search-icon {
+button[type="submit"] {
   position: absolute;
   background: none;
   border: none;
@@ -58,7 +58,7 @@ nav {
   z-index: 1000;
   border-radius: 16px;
   animation-name: slide-down;
-  animation-name: 1s;
+  animation-duration: 0.5s;
   top: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   overflow: hidden;
@@ -66,10 +66,10 @@ nav {
 
 @keyframes slide-down {
   from {
-    height: 0;
+    height: 0px;
   }
   to {
-    height: 220px;
+    height: 245.5px;
   }
 }
 
@@ -126,13 +126,13 @@ nav {
 }
 
 /* Clase de login/register navbar */
-.navbar-div-log-reg{
+.navbar-div-log-reg {
   display: flex;
   gap: 2px;
   height: 80%;
   min-width: 113px;
 }
-.navbar-div-log-reg > a{
+.navbar-div-log-reg > a {
   color: var(--gris-claro);
   font-size: 0.8rem;
   text-decoration: none;
@@ -143,7 +143,7 @@ nav {
   position: relative;
   height: 100%;
 }
-.navbar-div-log-reg > a:first-child::after{
+.navbar-div-log-reg > a:first-child::after {
   content: "";
   width: 1px;
   height: 78%;
@@ -151,7 +151,8 @@ nav {
   right: 2px;
   background-color: var(--gris-claro);
 }
-.navbar-div-log-reg > a:hover, .navbar-div-log-reg > a:active{
+.navbar-div-log-reg > a:hover,
+.navbar-div-log-reg > a:active {
   color: var(--gris-oscuro);
 }
 /*Termina clase de login/register navbar*/
@@ -170,8 +171,8 @@ nav {
     display: block;
     cursor: pointer;
   }
-  
-  .navbar-user-logo{
+
+  .navbar-user-logo {
     cursor: pointer;
     user-select: none;
     display: flex;
@@ -182,7 +183,7 @@ nav {
     border-radius: 15px;
   }
 
-  .navbar-user-logo > span{
+  .navbar-user-logo > span {
     color: #fff;
     font-size: 12px;
   }
@@ -194,6 +195,7 @@ nav {
   .profile-btn--container {
     position: relative;
   }
+
   .profile-card {
     animation-duration: 0.5s;
     animation-name: fade-in-2;
