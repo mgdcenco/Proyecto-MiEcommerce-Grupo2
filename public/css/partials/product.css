@@ -6,6 +6,9 @@
   display: flex;
   align-items: center;
 }
+.main--partials-container > .breadcrumb::before {
+  content: none;
+}
 .main--partials-container > .breadcrumb a {
   text-decoration: none;
   color: black;
@@ -17,6 +20,11 @@
 
 .main--partials-container > .breadcrumb--dark-theme a {
   color: aliceblue;
+}
+
+.breadcrumb-product::before {
+  content: url("/img/arrow-left.svg");
+  padding-top: 5px;
 }
 
 .main--partials-container .breadcrumb a:nth-child(2) {
