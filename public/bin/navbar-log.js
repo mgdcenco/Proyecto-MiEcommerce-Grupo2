@@ -26,11 +26,12 @@ if (divNavbarCart) {
     userDropdownName.innerHTML = "";
     userDropdownNameMobile.innerHTML = "";
   }
-  
-  if (logout) {
-  logout.addEventListener("click", () => {
-    localStorage.clear();
-  });
 
-  let cartLength = document.querySelector("#cartLenght");
+  if (logout) {
+    logout.addEventListener("click", () => {
+      localStorage.clear();
+    });
+
+    let cartLength = document.querySelector("#cartLenght");
+  }
 }
