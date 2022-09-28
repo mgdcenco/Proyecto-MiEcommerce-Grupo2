@@ -11,6 +11,7 @@
 @import url("./partials/productDescuento.css");
 @import url("pages/home.css");
 @import url("pages/searchResults.css");
+@import url("./partials/modal.css");
 
 :root {
   --blanco: rgba(255, 255, 255, 1);
