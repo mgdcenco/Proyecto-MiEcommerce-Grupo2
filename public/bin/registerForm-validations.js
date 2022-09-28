@@ -348,6 +348,17 @@ if (registerFormButton) {
       ShowElements(passwordErrorMessage.parentElement, passwordErrorAlert);
     }
 
+    if(repeatedPassword.length != 0 && password != repeatedPassword){
+      validRepeatedPassword = false;
+      repeatedPasswordErrorMessage.innerHTML = "Las contraseñas no coinciden";
+      ShowElements(repeatedPasswordErrorMessage.parentElement, repeatedPasswordErrorAlert);
+    }
+
+    if(repeatedPassword.length != 0 && password == repeatedPassword){
+      validRepeatedPassword = true;
+      HideElements(repeatedPasswordErrorAlert, repeatedPasswordErrorMessage.parentElement);
+    }
+
     checkTrueValidation();
     checkFalseValidation();
   });
