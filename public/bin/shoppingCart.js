@@ -51,8 +51,8 @@ if (cartContainer) {
       updateQuantity(id, updatedQty, userId);
       calculateTotalPrice();
     }
-    function deleteProduct(id) {
-      destroyProduct(id);
+    function deleteProduct(id,userId) {
+      destroyProduct(id,userId);
       location.reload();
     }
   
