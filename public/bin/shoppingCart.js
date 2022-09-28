@@ -5,17 +5,17 @@ localStorage.setItem("shoppingCart", JSON.stringify(cart));
  */
 
 if (cartContainer) {
-  if(localStorage.getItem("user")){
+  if (localStorage.getItem("user")) {
     window.addEventListener("load", async () => {
       let userId = parseInt(localStorage.getItem("id"));
       let cartList = document.querySelector(".cart-list");
-  
+
       let promesas = await Promise.all([getProducts(), getUserCart(userId)]);
       let getProductsResult = promesas[0];
       let getUserCartResult = promesas[1];
       let cartArray = [];
       let lengthCart = promesas[1].length;
-      localStorage.setItem("cartLength", lengthCart)
+      localStorage.setItem("cartLength", lengthCart);
       for (let i = 0; i < getProductsResult.length; i++) {
         for (let j = 0; j < getUserCartResult.length; j++) {
           if (getProductsResult[i].id === getUserCartResult[j].id) {
@@ -27,15 +27,15 @@ if (cartContainer) {
           }
         }
       }
-      let cart = renderCart(cartArray,userId);
+      let cart = renderCart(cartArray, userId);
       cartList.innerHTML = cart;
       calculateTotalPrice();
     });
-  
+
     function updateProductQty(id, price, operation, userId) {
       let qty = document.querySelector(`#qty-${id}`);
       let productPrice = document.querySelector(`#price-${id}`);
-  
+
       let updatedQty;
       if (operation === "+") {
         updatedQty = parseInt(qty.innerText) + 1;
@@ -52,16 +52,22 @@ if (cartContainer) {
       updateQuantity(id, updatedQty, userId);
       calculateTotalPrice();
     }
-    function deleteProduct(id,userId) {
-      destroyProduct(id,userId);
-      location.reload();
+    function deleteProduct(id, userId) {
+      destroyProduct(id, userId);
+      let productToDestroy = document.querySelector(`#productInCart${id}`);
+      productToDestroy.remove();
+      calculateTotalPrice();
+      let lengthCart = localStorage.getItem("cartLength");
+      localStorage.setItem("cartLength", lengthCart - 1);
     }
-  
+
     function renderCart(cartArray, userId) {
       let theme = localStorage.getItem("Theme");
       let productCart = cartArray
         .map((product) => {
-          return `<article class= "product-in-cart ${
+          return `<article id="productInCart${
+            product.id
+          }" class= "product-in-cart ${
             theme === "Dark" ? "product-in-cart--dark-theme" : ""
           }">
         <div class="product-img">
@@ -106,14 +112,14 @@ if (cartContainer) {
         .join(" ");
       return productCart;
     }
-  
+
     async function getProducts() {
       let totalProducts = await fetch(`http://localhost:5000/api/product`);
       let result = await totalProducts.json();
       return result;
     }
-  
-    async function updateQuantity(id, quantity,userId) {
+
+    async function updateQuantity(id, quantity, userId) {
       let updatedProduct = await fetch(`http://localhost:5000/api/cart`, {
         method: "PUT",
         headers: {
@@ -128,7 +134,7 @@ if (cartContainer) {
         }),
       });
     }
-  
+
     async function destroyProduct(id, userId) {
       let destroyProducts = await fetch(
         `http://localhost:5000/api/cart/${userId}/?productId=${id}`,
@@ -139,10 +145,8 @@ if (cartContainer) {
           },
         }
       );
-      renderCart()
-
     }
-  
+
     function calculateTotalPrice() {
       let productPriceArray = document.querySelectorAll(".product-price");
       let totalPrice = document.querySelector(".total-price");
@@ -151,11 +155,10 @@ if (cartContainer) {
         0
       );
     }
-  }else{
+  } else {
     let mainCart = document.querySelector(".cart-container");
-    mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">Ya estás a un paso de obtener tu producto. Solo hace falta que te registres para conseguirlo!En el siguiente link podras conseguirlo: <a href='http://localhost:3000/register' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Registrarse</a></p>`
+    mainCart.innerHTML = `<p style="font-size:20px; width: 80%; margin-left:auto; margin-right:auto;">Ya estás a un paso de obtener tu producto. Solo hace falta que te registres para conseguirlo!En el siguiente link podras conseguirlo: <a href='http://localhost:3000/register' style='display: inline-block; text-decoration:underline; color:blue; font-size:20px;'>Registrarse</a></p>`;
   }
-  
 }
 
 async function getUserCart(id) {
