@@ -19,6 +19,11 @@
   transition: box-shadow 0.2s ease;
 }
 
+.product-list--cards--card--dark-theme {
+  background-color: var(--dark-mode-cards);
+  color: white;
+}
+
 .product-list--cards--card:hover {
   box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.24);
 }
@@ -116,7 +121,7 @@
 }
 
 @media (min-width: 1112px) {
-  .product-list--cards{
+  .product-list--cards {
     justify-content: space-between;
   }
 }

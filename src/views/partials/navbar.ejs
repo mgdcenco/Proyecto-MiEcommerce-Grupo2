@@ -26,7 +26,9 @@
         <img src="/img/magnify.svg" alt="" />
       </button>
     </form>
-    <a href="/cart" id="cart-button-navbar"><img src="/img/Cart.svg" alt="Cart Button" /></a>
+    <a href="/cart" id="cart-button-navbar"
+      ><span id="cartLength"></span><img src="/img/Cart.svg" alt="Cart Button"
+    /></a>
     <div class="profile-btn--container">
       <img
         src="/img/ProfileBtn.svg"
@@ -34,10 +36,7 @@
         alt="Profile Button"
       />
       <div class="navbar-user-logo logo-desktop profileBtn">
-        <img
-        src="/img/ProfileBtn.svg"
-        alt="Profile Button"
-        />
+        <img src="/img/ProfileBtn.svg" alt="Profile Button" />
         <span id="user-name-navbar"></span>
       </div>
       <div class="navbar-drop-down" id="dropDown">
@@ -54,7 +53,9 @@
         </ul>
         <hr />
         <div class="navbar-theme--button">
-          <button><i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro</button>
+          <button onclick="darkTheme()">
+            <i class="fa-solid fa-gear"></i>Cambiar a Tema Oscuro
+          </button>
         </div>
       </div>
     </div>

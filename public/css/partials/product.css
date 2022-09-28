@@ -12,13 +12,9 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
-.main--partials-container .breadcrumb a:first-child::before {
-  content: url("/img/arrow-left.svg");
-  color: black;
-  padding-top: 5px;
-}
 .main--partials-container .breadcrumb a:nth-child(2) {
   text-transform: capitalize;
 }
@@ -74,7 +70,7 @@
 .section-product-detail__images-collection > img:active {
   outline: 1px solid var(--gris-oscuro);
 }
-.image-product-active{
+.image-product-active {
   outline: 1px solid var(--gris-oscuro);
 }
 .section-product-detail__images-collection > img:not(:last-child) {

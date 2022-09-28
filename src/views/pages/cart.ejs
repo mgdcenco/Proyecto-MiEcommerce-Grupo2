@@ -6,15 +6,13 @@
       <div class="cart-containerWrapper-partials">
         <%- include('../partials/navbar', noSearchBox) %>
         <main class="cart-container">
-          <a class="breadcrumb" href="/">Volver</a>
+          <a class="breadcrumb" onclick="history.back()">Volver</a>
           <h1>Productos en tu carrito</h1>
           <div class="cart-list"></div>
 
           <div class="cart-total-container">
             <p>Total de Puntos</p>
-            <span class="total-price"
-              ><%= products.reduce((total, product)=>total+product.price, 0) %>
-            </span>
+            <span class="total-price"></span>
           </div>
           <div class="button-container">
             <form action="/checkout" method="get">

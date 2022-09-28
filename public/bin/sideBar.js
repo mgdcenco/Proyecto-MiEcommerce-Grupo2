@@ -26,7 +26,8 @@ document.addEventListener("click", (event) => {
     event.target.parentNode !== dropDown &&
     event.target.parentNode !== dropDownList &&
     event.target.parentNode !== themeButton &&
-    event.target.parentNode !== profileBtnContainer
+    event.target.parentNode !== profileBtnContainer &&
+    dropDown
   ) {
     dropDown.style.display = "none";
   }

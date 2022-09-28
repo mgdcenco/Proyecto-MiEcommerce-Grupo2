@@ -17,6 +17,15 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.breadcrumb {
+  border: none;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .cart-container h1 {
@@ -30,7 +39,7 @@
   color: #000000;
 }
 
-.cart-container a::before {
+.breadcrumb::before {
   content: url("/img/arrow-left.svg");
   color: black;
   padding-top: 5px;
