@@ -58,7 +58,7 @@ button[type="submit"] {
   z-index: 1000;
   border-radius: 16px;
   animation-name: slide-down;
-  animation-name: 1s;
+  animation-duration: 0.5s;
   top: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   overflow: hidden;
@@ -66,10 +66,10 @@ button[type="submit"] {
 
 @keyframes slide-down {
   from {
-    height: 0;
+    height: 0px;
   }
   to {
-    height: 220px;
+    height: 245.5px;
   }
 }
 

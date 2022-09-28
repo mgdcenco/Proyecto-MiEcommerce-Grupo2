@@ -14,7 +14,7 @@ if (divNavbarCart) {
     let userName = localStorage.getItem("user");
     divRegLogUser.style.display = "none";
     divNavbarCart.style.display = "flex";
-    divNavbarUser.style.display = "initial";
+    divNavbarUser.style.display = "flex";
     userNavbarName.innerHTML = userName;
     userDropdownName.innerHTML = userName;
     userDropdownNameMobile.innerHTML = userName;
